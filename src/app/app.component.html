@@ -1,5 +1,5 @@
-<twn-header></twn-header>
-<twn-menu></twn-menu>
+<twn-header (menuToggled)="menuToggled()"></twn-header>
+<twn-menu [visibilityStream]="layout.menuVisible"></twn-menu>
 
 <div id="mainContent"
      class="page">

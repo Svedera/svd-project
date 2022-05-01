@@ -34,6 +34,7 @@
     "@angular-eslint/template-parser": "13.2.1",
     "@angular/cli": "~13.1.2",
     "@angular/compiler-cli": "~13.1.0",
+    "@ngneat/until-destroy": "^8.1.4",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.17.0",

@@ -10,6 +10,7 @@ import { ArticleHandler } from '@services/abstract/articleHandler';
 import { ArticleService } from '@services/article.service';
 import { Logging } from '@services/abstract/logging';
 import { LoggingService } from '@services/logging.service';
+import { LayoutService } from './core/service/layout.service';
 
 export const AppProviders: Provider[] = [
   {
@@ -26,5 +27,6 @@ export const AppProviders: Provider[] = [
   },
   {
     provide: Logging, useClass: LoggingService
-  }
+  },
+  LayoutService
 ];

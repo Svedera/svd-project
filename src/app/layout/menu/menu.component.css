@@ -16,6 +16,10 @@
     transform: translate(calc(var(--twn-menuWidth) * -1));
     transition: transform .25s;
   }
+
+  :host.menu-visible {
+    transform: translate(0);
+  }
 }
 
 .logo {
@@ -42,7 +46,8 @@ ul li a {
   transform-origin: right center;
 }
 
-ul li a:hover, ul li a.active {
+ul li a:hover,
+ul li a.active {
   color: var(--twn-linkHoverColor);
   transform: scale(1.05);
 }

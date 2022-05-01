@@ -8,6 +8,7 @@ import {
   Router
 } from '@angular/router';
 import { RemoteRouterState } from '@enums/remoteRouterState';
+import { LayoutService } from './core/service/layout.service';
 
 
 @Component({
@@ -18,7 +19,9 @@ import { RemoteRouterState } from '@enums/remoteRouterState';
 export class AppComponent {
   routerState: RemoteRouterState = RemoteRouterState.Unknown;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    public layout: LayoutService) {
     this.router.events.subscribe(
       (event: Event) => this.getRouterState(event));
   }
@@ -39,4 +42,6 @@ export class AppComponent {
 
     return RemoteRouterState.Unknown;
   }
+
+  menuToggled = () => this.layout.menuToggled();
 }
