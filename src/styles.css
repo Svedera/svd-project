@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;900&display=swap);
+
+@import 'variables.css';
+@import 'fonts.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: var(--twn-rootFontSize);
+}
+
+body,
+html {
+  background: var(--twn-backgroundColor);
+  padding: 0;
+  margin: 0;
+  color: var(--twn-alternateTextColor);
+  font-family: var(--twn-textFont);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--twn-font)
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+  margin-top: 0
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child {
+  margin-bottom: 0
+}
+
+h1 {
+  font-size: 2.8125rem
+}
+
+h1,
+h2 {
+  text-align: center;
+  text-transform: uppercase
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 3.75rem 0 0
+}
+
+p {
+  margin: 2.5rem 0
+}
+
+p a {
+  color: var(--twn-highlightColor)
+}
+
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 2.25rem
+  }
+
+  h2 {
+    font-size: 1.5rem
+  }
+}
+
+.text-center {
+  text-align: center
+}
+
+.text-highlight {
+  color: var(--twn-highlightColor)
+}
