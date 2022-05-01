@@ -23,14 +23,13 @@
   }
 }
 
-.page-loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+.inline {
+  max-width: var(--twnMaxWidth);
+  min-height: 100%;
+  margin: 0 auto
 }
 
-.page-loader img {
-  max-width: 38px;
-  min-width: 38px;
+.inline,
+.page {
+  position: relative
 }

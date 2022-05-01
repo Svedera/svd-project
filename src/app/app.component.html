@@ -3,11 +3,11 @@
 
 <div id="mainContent"
      class="page">
+  <div class="inline">
 
-  <router-outlet></router-outlet>
-  <div *ngIf="loading"
-       class="page-loader">
-    <img src="assets/images/loader.svg">
+    <twn-remote-state-wrapper [state]="routerState">
+      <router-outlet></router-outlet>
+    </twn-remote-state-wrapper>
+
   </div>
-
 </div>

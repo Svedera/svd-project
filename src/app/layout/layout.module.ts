@@ -7,16 +7,21 @@ import { MenuComponent } from './menu/menu.component';
 import {
   DefaultContentComponent
 } from './default-content/default-content.component';
+import {
+  RemoteStateWrapperComponent
+} from './remote-state-wrapper/remote-state-wrapper.component';
 
 @NgModule({
   declarations: [
     MenuComponent,
     HeaderComponent,
-    DefaultContentComponent
+    DefaultContentComponent,
+    RemoteStateWrapperComponent
   ],
   exports: [
     MenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    RemoteStateWrapperComponent
   ],
   imports: [
     SharedModule,

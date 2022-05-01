@@ -1,0 +1,11 @@
+.page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.page-loader img {
+  max-width: 38px;
+  min-width: 38px;
+}

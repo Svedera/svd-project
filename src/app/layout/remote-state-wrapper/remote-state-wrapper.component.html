@@ -1,0 +1,16 @@
+<container-element [ngSwitch]="state">
+  <ng-container *ngSwitchCase="RemoteRouterState.Start">
+    <div class="page-center">
+      <img src="assets/images/loader.svg">
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="RemoteRouterState.Error">
+    <div class="page-center">
+      Something went wrong
+      <i class="fa-solid fa-fw fa-heart-crack"></i>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <ng-content></ng-content>
+  </ng-container>
+</container-element>
