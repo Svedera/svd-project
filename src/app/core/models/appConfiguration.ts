@@ -1,10 +1,15 @@
+import { LogLevel } from '@enums/logLevel';
+
 export class AppConfiguration {
+  logLevel: LogLevel;
   timeouts: TimeoutConfiguration;
-  apiPaths: ApiPathsConfiguration;
+  apiPaths: ApiConfiguration;
 
   constructor(
-    apiPaths: ApiPathsConfiguration,
+    logLevel: LogLevel,
+    apiPaths: ApiConfiguration,
     timeouts: TimeoutConfiguration) {
+    this.logLevel = logLevel;
     this.apiPaths = apiPaths;
     this.timeouts = timeouts;
   }
@@ -19,7 +24,7 @@ export class TimeoutConfiguration {
   }
 }
 
-export class ApiPathsConfiguration {
+export class ApiConfiguration {
   articleUrl: string;
   tableUrl: string;
 

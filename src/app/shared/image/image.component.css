@@ -1,0 +1,71 @@
+:host {
+  display: block;
+  padding-bottom: 50%;
+  position: relative;
+  border-radius: .375rem;
+  transform: translate(0)
+}
+
+:host:hover .image__face {
+  transform: scale(1.05);
+}
+
+:host:hover .image__fade__img {
+  transform: scale(1.2)
+}
+
+.image__face,
+.image__fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  transition: transform .2s;
+  background: center center no-repeat
+}
+
+.image__face {
+  background-size: contain
+}
+
+.image__fade {
+  z-index: 1;
+  overflow: hidden
+}
+
+.image__fade__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: -.625rem;
+  background: center center no-repeat;
+  background-size: contain;
+  background-size: cover;
+  filter: blur(.625rem);
+  transition: transform .3s
+}
+
+.image__title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: .625rem 1.5rem;
+  font-size: 1rem;
+  z-index: 6;
+  background: rgba(0, 0, 0, .5)
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 5
+}

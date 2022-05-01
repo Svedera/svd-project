@@ -6,10 +6,16 @@ import { ListComponent } from './features/list/list.component';
 import {
   DefaultContentComponent
 } from './layout/default-content/default-content.component';
+import {
+  ArticleResolver
+} from '@services/resolvers/article-resolver.service';
 
 const routes: Routes = [{
   path: 'article',
   component: ArticleComponent,
+  resolve: {
+    article: ArticleResolver
+  },
   data: {
     title: 'Article'
   }

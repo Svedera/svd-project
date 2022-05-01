@@ -1,1 +1,26 @@
-<p>article works!</p>
+<ng-container *ngIf="article == null else articleTemplate">
+  Could not load article.
+</ng-container>
+
+<ng-template #articleTemplate>
+  <h1 tabindex="0"
+      [attr.aria-label]="article!.title">
+    {{article!.title}}
+  </h1>
+
+  <div tabindex="0"
+       class="intro"
+       [innerHTML]="article!.intro">
+  </div>
+
+  <twn-image [image]="article!.image"></twn-image>
+
+  <div tabindex="0"
+       [innerHTML]="article!.body">
+  </div>
+
+  <twn-chip tabindex="0"
+            *ngFor="let tag of (article!.tags  || []) | removeEmptyEntries"
+            [title]="tag">
+  </twn-chip>
+</ng-template>

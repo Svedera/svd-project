@@ -1,0 +1,21 @@
+<ng-container *ngIf="image == null else imageTemplate">
+  No image source.
+</ng-container>
+
+<ng-template #imageTemplate>
+  <img tabindex="0"
+       [src]="image!.medium"
+       [alt]="image!.alt"
+       [title]="image!.title">
+  <div class="image__title">{{image!.title}}</div>
+  <div class="image__fade">
+
+    <div class="image__fade__img"
+         [style.background-image]="image!.medium | urlAsBackgroundImage">
+    </div>
+
+  </div>
+  <div class="image__face"
+       [style.background-image]="image!.medium | urlAsBackgroundImage">
+  </div>
+</ng-template>

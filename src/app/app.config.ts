@@ -1,19 +1,21 @@
+import { LogLevel } from '@enums/logLevel';
 import {
-  ApiPathsConfiguration,
+  ApiConfiguration,
   AppConfiguration,
   TimeoutConfiguration
-} from "@models/appConfiguration";
+} from '@models/appConfiguration';
 
 export const TimeoutConfig: TimeoutConfiguration = {
   requestTimeout: 3000
 }
 
-export const ApiPaths: ApiPathsConfiguration = {
-  articleUrl: '',
-  tableUrl: ''
+export const ApiConfig: ApiConfiguration = {
+  articleUrl: 'http://localhost:3000/article',
+  tableUrl: 'http://localhost:3000/table'
 }
 
 export const AppConfig: AppConfiguration = {
+  logLevel: LogLevel.All,
   timeouts: TimeoutConfig,
-  apiPaths: ApiPaths
+  apiPaths: ApiConfig
 }
