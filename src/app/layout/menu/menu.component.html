@@ -1,0 +1,39 @@
+<img [routerLink]="['/']"
+     aria-label="TWN logo"
+     class="logo"
+     tabindex="0"
+     src="/assets/images/logo.svg">
+<ul>
+  <li>
+
+    <a routerlinkactive="active"
+       [routerLink]="['/article']"
+       class="">
+      Article
+      <ngx-fa size="md"
+              name="file"></ngx-fa>
+    </a>
+
+  </li>
+  <li>
+
+    <a routerlinkactive="active"
+       [routerLink]="['/list']"
+       class="">
+      Table
+      <ngx-fa size="md"
+              name="table"></ngx-fa>
+    </a>
+
+  </li>
+  <li>
+
+    <a routerlinkactive="active"
+       [routerLink]="['/life']">
+      Game of Life
+      <ngx-fa size="md"
+              name="photo"></ngx-fa>
+    </a>
+
+  </li>
+</ul>

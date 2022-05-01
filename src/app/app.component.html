@@ -1,1 +1,13 @@
-test
+<twn-header></twn-header>
+<twn-menu></twn-menu>
+
+<div id="mainContent"
+     class="page">
+
+  <router-outlet></router-outlet>
+  <div *ngIf="loading"
+       class="page-loader">
+    <img src="assets/images/loader.svg">
+  </div>
+
+</div>
