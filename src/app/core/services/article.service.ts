@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { catchError, Observable, tap, timeout } from 'rxjs';
+import { catchError, Observable, timeout } from 'rxjs';
 
 import {
   ApiConfiguration,
@@ -30,23 +30,30 @@ export class ArticleService extends HttpBaseService implements ArticleHandler {
   public getArticle(id: string | null): Observable<Article> {
     const param = id ?? this.appConfig.defaultArticleId;
     const url = `${this.apiPaths.articleUrl}/${param}`;
-    return this.http
-      .get<Article>(url)
-      .pipe(
-        tap(article => article && this.logger.traceObject(article)),
-        timeout(this.timeouts.requestTimeout),
-        catchError(this.handleError)
-      );
+
+    return this.httpGet(url);
   };
 
   public getArticleList(): Observable<ArticleList> {
+    const limit = this.appConfig.defaultListLimit;
+    return this.getArticleListWithLimit(limit);
+  };
+
+  public getArticleListWithLimit(limit: number): Observable<ArticleList> {
+    const url = this.apiPaths.articleUrl;
+    let params = new HttpParams().set('limit', limit);
+
+    return this.httpGet(url, params);
+  };
+
+  private httpGet<T>(
+    url: string,
+    params: HttpParams | undefined = undefined): Observable<T> {
     return this.http
-      .get<ArticleList>(this.apiPaths.listUrl)
+      .get<T>(url, { params: params })
       .pipe(
-        tap(list => list &&
-          this.logger.trace(`Got list, count: ${list.stats.result}`)),
         timeout(this.timeouts.requestTimeout),
         catchError(this.handleError)
       );
-  };
+  }
 }

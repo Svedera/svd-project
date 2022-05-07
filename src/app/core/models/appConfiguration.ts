@@ -2,12 +2,14 @@ import { LogLevel } from '@enums/logLevel';
 
 export class AppConfiguration {
   defaultArticleId: string;
+  defaultListLimit: number;
   logLevel: LogLevel;
   timeouts: TimeoutConfiguration;
   apiPaths: ApiConfiguration;
 
   constructor(
     defaultArticleId: string,
+    defaultListLimit: number,
     logLevel: LogLevel,
     apiPaths: ApiConfiguration,
     timeouts: TimeoutConfiguration) {
@@ -15,6 +17,7 @@ export class AppConfiguration {
     this.logLevel = logLevel;
     this.apiPaths = apiPaths;
     this.timeouts = timeouts;
+    this.defaultListLimit = defaultListLimit;
   }
 }
 
