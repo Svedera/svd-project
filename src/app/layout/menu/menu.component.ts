@@ -5,7 +5,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Component({
-  selector: 'twn-menu',
+  selector: 'svd-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })

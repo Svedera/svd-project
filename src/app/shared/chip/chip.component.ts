@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'twn-chip',
+  selector: 'svd-chip',
   templateUrl: './chip.component.html',
   styleUrls: ['./chip.component.css']
 })

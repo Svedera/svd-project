@@ -3,11 +3,11 @@
     url(/assets/images/bg-deco-left.svg),
     url(/assets/images/bg-deco-right.svg);
   background-repeat: no-repeat;
-  background-position: var(--twn-menuWidth) bottom, 100% 0;
+  background-position: var(--svd-menuWidth) bottom, 100% 0;
   background-size: 150px, 250px;
   background-attachment: fixed;
   display: block;
-  margin-left: var(--twn-menuWidth);
+  margin-left: var(--svd-menuWidth);
   height: 100vh;
   overflow: auto;
   padding: 5rem 2.5rem;
@@ -24,7 +24,7 @@
 }
 
 .inline {
-  max-width: var(--twnMaxWidth);
+  max-width: var(--svdMaxWidth);
   min-height: 100%;
   margin: 0 auto
 }

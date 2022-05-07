@@ -8,11 +8,11 @@ import {
   Router
 } from '@angular/router';
 import { RemoteRouterState } from '@enums/remoteRouterState';
-import { LayoutService } from './core/service/layout.service';
+import { LayoutService } from './core/services/layout.service';
 
 
 @Component({
-  selector: 'twn-root',
+  selector: 'svd-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

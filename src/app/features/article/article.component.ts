@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Article } from '@models/article';
+import { Article } from 'src/app/core/backend-models/article';
 
 @Component({
-  selector: 'twn-article',
+  selector: 'svd-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
@@ -15,6 +15,6 @@ export class ArticleComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.article = this.route.snapshot.data.article as Article;
+    this.article = this.route.snapshot.data.article as Article ?? null;
   }
 }

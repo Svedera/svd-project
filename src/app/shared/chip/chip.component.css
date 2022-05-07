@@ -1,8 +1,9 @@
 :host {
-  background: var(--twn-secondaryColor);
+  background: var(--svd-secondaryColor);
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   font-size: 14px;
   font-weight: 700;
+  margin-right: 0.5em;
 }

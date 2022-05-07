@@ -5,11 +5,12 @@ export interface Article {
   title: string;
 
   email: string;
-  firstName: string;
+  firstname: string;
   surname: string;
   author: string;
   sex: string;
-  personalCode: number;
+
+  personal_code: number;
   phone: string;
 
   date: number;

@@ -6,14 +6,14 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: var(--twn-font);
+  font-family: var(--svd-font);
   text-align: center;
   flex-direction: column
 }
 
 h1 {
   font-size: 2.8125rem;
-  color: var(--twn-highlightColor);
+  color: var(--svd-highlightColor);
   font-weight: 700;
   margin: 0
 }

@@ -1,0 +1,82 @@
+<ng-container *ngIf="columns == null
+                      || sortedRecords == null
+                      || paging == null
+                    else tableTemplate">
+
+  <span *ngIf="columns == null">
+    No column data provided.
+  </span>
+  <span *ngIf="sortedRecords == null">
+    No records provided.
+  </span>
+  <span *ngIf="paging == null">
+    No paging data provided.
+  </span>
+
+</ng-container>
+
+<ng-template #tableTemplate>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let column of columnViews">
+            <button [attr.aria-label]="column.title"
+                    [ngClass]="{'disabled' : column.nonSortable}"
+                    (click)="sortColumn(column.id)">
+              {{column!.title}}
+              <ngx-fa *ngIf="column.icon"
+                      [name]="column.icon"
+                      size="lg"></ngx-fa>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+                      *ngFor="let row of sortedRecords! |
+                                    getPage:columns!:pagingView!.elementsRange">
+
+          <tr role="button"
+              tabindex="0"
+              class="clickable active"
+              [ngClass]="{'active' : row.index === selectedRow}"
+              (click)="selectRow(row!.index)">
+            <td *ngFor="let cell of row!.cells"
+                tabindex="0">
+              {{cell}}
+            </td>
+          </tr>
+          <tr *ngIf="row.index === selectedRow && detailTemplate != null"
+              role="button"
+              tabindex="0"
+              class="active">
+            <td [attr.colspan]="columnsCount">
+              <ng-container *ngTemplateOutlet="detailTemplate;
+                                                context: {record: row.record}">
+              </ng-container>
+            </td>
+          </tr>
+
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <svd-paging [view]="
+                            pagingView"
+              (shiftPage)="shiftPage($event)">
+  </svd-paging>
+</ng-template>
+
+<ng-template #column
+             let-row="row">
+  <tr role="button"
+      tabindex="0"
+      class="clickable">
+    <td *ngFor="let cell of row?.cells"
+        tabindex="0">
+      {{cell}}
+    </td>
+  </tr>
+</ng-template>

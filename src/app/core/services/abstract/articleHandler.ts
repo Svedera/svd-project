@@ -1,7 +1,9 @@
 import { Observable } from 'rxjs';
 
-import { Article } from '../../models/article';
+import { Article } from 'src/app/core/backend-models/article';
+import { ArticleList } from 'src/app/core/backend-models/articleList';
 
 export abstract class ArticleHandler {
-  abstract getArticle: () => Observable<Article>;
+  abstract getArticle: (id: string | null) => Observable<Article>;
+  abstract getArticleList: () => Observable<ArticleList>;
 }

@@ -1,0 +1,46 @@
+.tab {
+  display: flex;
+  white-space: pre-wrap;
+}
+
+.tab .image {
+  width: 12.5rem;
+  height: 12.5rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: center center no-repeat;
+  background-size: cover;
+  margin: .375rem;
+  background-color: #f1f1f1
+}
+
+.tab .body {
+  padding-left: 1rem
+}
+
+.tab .body p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.tab .body p:not(:first-child) {
+  display: none;
+}
+
+.tab .body {
+  margin-right: 2em;
+}
+
+.tab .body p:first-child {
+  margin-top: 0;
+}
+
+.tab .body p:last-child {
+  margin-bottom: 0;
+}
+
+[svd-button] {
+  margin-top: 20px
+}

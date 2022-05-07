@@ -8,7 +8,7 @@ import { ArticleService } from './article.service';
 import {
   ApiConfiguration,
   TimeoutConfiguration
-} from '@models/appConfiguration';
+} from 'src/app/core/models/appConfiguration';
 import { ApiConfig, TimeoutConfig } from 'src/app/app.config';
 
 describe('ArticleService', () => {

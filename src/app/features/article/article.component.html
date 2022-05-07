@@ -13,14 +13,14 @@
        [innerHTML]="article!.intro">
   </div>
 
-  <twn-image [image]="article!.image"></twn-image>
+  <svd-image [image]="article!.image"></svd-image>
 
   <div tabindex="0"
        [innerHTML]="article!.body">
   </div>
 
-  <twn-chip tabindex="0"
+  <svd-chip tabindex="0"
             *ngFor="let tag of (article!.tags  || []) | removeEmptyEntries"
             [title]="tag">
-  </twn-chip>
+  </svd-chip>
 </ng-template>

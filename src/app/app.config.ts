@@ -10,11 +10,13 @@ export const TimeoutConfig: TimeoutConfiguration = {
 }
 
 export const ApiConfig: ApiConfiguration = {
-  articleUrl: 'http://localhost:3000/article',
-  tableUrl: 'http://localhost:3000/table'
+  articleUrl: 'https://midaiganes.irw.ee/api/list',
+  // https://midaiganes.irw.ee/api/list?limit=500
+  listUrl: 'http://localhost:8000/list'
 }
 
 export const AppConfig: AppConfiguration = {
+  defaultArticleId: '972d2b8a',
   logLevel: LogLevel.All,
   timeouts: TimeoutConfig,
   apiPaths: ApiConfig

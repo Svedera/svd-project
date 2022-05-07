@@ -24,6 +24,7 @@
     "paths": {
       "@services/*": ["src/app/core/services/*"],
       "@models/*": ["src/app/core/models/*"],
+      "@backend-models/*": ["src/app/core/backend-models/*"],
       "@enums/*": ["src/app/core/enums/*"],
       "@shared/*": ["src/app/shared/*"]
     }

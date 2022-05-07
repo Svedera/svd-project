@@ -1,0 +1,55 @@
+[svd-button] {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 0.85em 2.5em;
+  transition: background-color .25s ease-out;
+  font-family: var(--svd-font);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: #14cc76;
+  color: #3a3d57;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  text-decoration: none;
+  border-bottom: 0.25rem solid #37945C;
+  text-transform: uppercase;
+}
+
+
+.svd-button__small {
+  font-size: .75rem;
+  padding: .85em 1.7em
+}
+
+.svd-button__transparent {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 2.5em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transition: none
+}
+
+.svd-button__transparent:hover {
+  border: #fff .0625rem solid
+}
+
+.svd-button__active {
+  background: white;
+  color: #333
+}
+
+[svd-button]+[svd-button] {
+  margin-left: 16px
+}

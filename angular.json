@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "twn-test-project": {
+    "svd-test-project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -12,12 +12,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "twn",
+      "prefix": "svd",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/twn-test-project",
+            "outputPath": "dist/svd-test-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "twn-test-project:build:production"
+              "browserTarget": "svd-test-project:build:production"
             },
             "development": {
-              "browserTarget": "twn-test-project:build:development"
+              "browserTarget": "svd-test-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "twn-test-project:build"
+            "browserTarget": "svd-test-project:build"
           }
         },
         "test": {
@@ -113,7 +113,7 @@
       }
     }
   },
-  "defaultProject": "twn-test-project",
+  "defaultProject": "svd-test-project",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }

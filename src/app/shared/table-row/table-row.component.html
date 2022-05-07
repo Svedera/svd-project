@@ -1,0 +1,18 @@
+<tr role="button"
+    tabindex="0"
+    class="clickable active"
+    [ngClass]="{'active' : selected}"
+    (click)="selectRow.emit(row!.index)">
+  <td *ngFor="let cell of row!.cells"
+      tabindex="0">
+    {{cell}}
+  </td>
+</tr>
+
+<tr *ngIf="selected && detailTemplate != null"
+    role="button"
+    tabindex="0"
+    class="clickable active">
+  <ng-container *ngTemplateOutlet="detailTemplate">
+  </ng-container>
+</tr>

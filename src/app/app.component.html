@@ -1,13 +1,13 @@
-<twn-header (menuToggled)="menuToggled()"></twn-header>
-<twn-menu [visibilityStream]="layout.menuVisible"></twn-menu>
+<svd-header (menuToggled)="menuToggled()"></svd-header>
+<svd-menu [visibilityStream]="layout.menuVisible"></svd-menu>
 
 <div id="mainContent"
      class="page">
   <div class="inline">
 
-    <twn-remote-state-wrapper [state]="routerState">
+    <svd-remote-state-wrapper [state]="routerState">
       <router-outlet></router-outlet>
-    </twn-remote-state-wrapper>
+    </svd-remote-state-wrapper>
 
   </div>
 </div>

@@ -1,0 +1,30 @@
+<h1>List</h1>
+
+<svd-table [recordsStream]="recordsStream"
+           [columnsStream]="columnsStream"
+           [pagingStream]="pagingStream"
+           [detailTemplate]="articleDetails"></svd-table>
+
+
+<ng-template #articleDetails
+             let-article="record">
+  <div class="tab">
+    <div role="img"
+         tabindex="0"
+         class="image"
+         title="{{article}}"
+         [style.background-image]="
+                                article.image!.medium | urlAsBackgroundImage">
+    </div>
+    <div class="body">
+      <div tabindex="0">
+        <p>{{article.body | firstParagraph}}</p>
+      </div>
+      <a svd-button
+         variant="small"
+         class="svd-button__small"
+         routerlinkactive="active"
+         routerLink="/{{AppRouts.Article}}/{{article.id}}">Read more</a>
+    </div>
+  </div>
+</ng-template>

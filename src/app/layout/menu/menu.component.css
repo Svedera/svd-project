@@ -3,7 +3,7 @@
   background: #fff;
   top: 0;
   left: 0;
-  width: var(--twn-menuWidth);
+  width: var(--svd-menuWidth);
   padding: 1.5625rem;
   height: 100vh;
   z-index: 900;
@@ -13,7 +13,7 @@
 @media screen and (max-width: 960px) {
   :host {
     padding-top: 3.125rem;
-    transform: translate(calc(var(--twn-menuWidth) * -1));
+    transform: translate(calc(var(--svd-menuWidth) * -1));
     transition: transform .25s;
   }
 
@@ -39,7 +39,7 @@ ul li a {
   text-align: right;
   margin: 0 -1.25rem;
   text-decoration: none;
-  color: var(--twn-textColor);
+  color: var(--svd-textColor);
   font-size: 1.1875rem;
   text-transform: uppercase;
   transition: transform .25s;
@@ -48,6 +48,6 @@ ul li a {
 
 ul li a:hover,
 ul li a.active {
-  color: var(--twn-linkHoverColor);
+  color: var(--svd-linkHoverColor);
   transform: scale(1.05);
 }

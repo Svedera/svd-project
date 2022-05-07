@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '@shared/shared.module';
 import { HeaderComponent } from './header/header.component';
@@ -24,8 +23,7 @@ import {
     RemoteStateWrapperComponent
   ],
   imports: [
-    SharedModule,
-    RouterModule
+    SharedModule
   ]
 })
 export class LayoutModule {

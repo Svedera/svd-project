@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LogLevel } from '@enums/logLevel';
-import { AppConfiguration } from '@models/appConfiguration';
+import { AppConfiguration } from 'src/app/core/models/appConfiguration';
 
 import { Logging } from './abstract/logging';
 

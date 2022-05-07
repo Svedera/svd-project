@@ -5,12 +5,12 @@ import {
   ApiConfiguration,
   AppConfiguration,
   TimeoutConfiguration
-} from '@models/appConfiguration';
+} from 'src/app/core/models/appConfiguration';
 import { ArticleHandler } from '@services/abstract/articleHandler';
 import { ArticleService } from '@services/article.service';
 import { Logging } from '@services/abstract/logging';
 import { LoggingService } from '@services/logging.service';
-import { LayoutService } from './core/service/layout.service';
+import { LayoutService } from '@services/layout.service';
 
 export const AppProviders: Provider[] = [
   {

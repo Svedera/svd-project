@@ -2,24 +2,25 @@
 
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
-@import 'variables.css';
-@import 'fonts.css';
+@import 'styles/variables.css';
+@import 'styles/fonts.css';
+@import 'styles/button.css';
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-size: var(--twn-rootFontSize);
+  font-size: var(--svd-rootFontSize);
 }
 
 body,
 html {
-  background: var(--twn-backgroundColor);
+  background: var(--svd-backgroundColor);
   padding: 0;
   margin: 0;
-  color: var(--twn-alternateTextColor);
-  font-family: var(--twn-textFont);
+  color: var(--svd-alternateTextColor);
+  font-family: var(--svd-textFont);
 }
 
 h1,
@@ -27,7 +28,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--twn-font)
+  font-family: var(--svd-font)
 }
 
 h1:first-child,
@@ -66,7 +67,7 @@ p {
 }
 
 p a {
-  color: var(--twn-highlightColor)
+  color: var(--svd-highlightColor)
 }
 
 @media screen and (max-width: 960px) {
@@ -84,5 +85,5 @@ p a {
 }
 
 .text-highlight {
-  color: var(--twn-highlightColor)
+  color: var(--svd-highlightColor)
 }
