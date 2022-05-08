@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxFontAwesomeModule } from 'ngx-font-awesome';
 
@@ -12,7 +14,6 @@ import { PagingComponent } from './paging/paging.component';
 import { GetPagePipe } from './pipes/get-page.pipe';
 import { TableRowComponent } from './table-row/table-row.component';
 import { FirstParagraphPipe } from './pipes/text-fragment.pipe';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,11 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    NgxFontAwesomeModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
+
+    NgxFontAwesomeModule
   ],
   exports: [
     CommonModule,
@@ -45,6 +49,8 @@ import { RouterModule } from '@angular/router';
     UrlAsBackgroundImagePipe,
     RemoveEmptyEntriesPipe,
     FirstParagraphPipe,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule
   ]
 })

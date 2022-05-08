@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArticleComponent } from './features/article/article.component';
 import {
   ArticleListComponent
-} from './features/list/article-list.component';
+} from './features/article/list/article-list.component';
 import {
   DefaultContentComponent
 } from './layout/default-content/default-content.component';
@@ -15,6 +15,9 @@ import {
   ArticleListResolver
 } from '@services/resolvers/article-list-resolver.service';
 import { AppRouts } from '@enums/appRouts';
+import {
+  GameOfLifeComponent
+} from './features/game-of-life/game-of-life.component';
 
 const routes: Routes = [{
   path: `${AppRouts.Article}/:id`,
@@ -44,6 +47,13 @@ const routes: Routes = [{
   },
   data: {
     title: 'List'
+  }
+},
+{
+  path: `${AppRouts.GameOfLife}`,
+  component: GameOfLifeComponent,
+  data: {
+    title: 'Game of life'
   }
 },
 {

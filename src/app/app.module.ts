@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
-import { NgxFontAwesomeModule } from 'ngx-font-awesome';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +9,9 @@ import { AppProviders } from './app.providers';
 import { ArticleModule } from './features/article/article.module';
 import { LayoutModule } from './layout/layout.module';
 import { SharedModule } from './shared/shared.module';
-import { CommonModule } from '@angular/common';
+import { GameOfLiveModule
+ } from './features/game-of-life/game-of-life.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,12 +22,10 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
 
-    NgxFontAwesomeModule,
-
     ArticleModule,
     LayoutModule,
     SharedModule,
-
+    GameOfLiveModule
   ],
   providers: AppProviders,
   bootstrap: [AppComponent]

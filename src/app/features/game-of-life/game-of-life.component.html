@@ -1,0 +1,138 @@
+<h1>Conways Game of life</h1>
+<form [formGroup]="form">
+  <div class="form">
+    <div class="formItem">
+
+      <div class="formItem__label">Grid width</div>
+      <select formControlName="gridWidth"
+              aria-label="Select grid width">
+        <option *ngFor="let option of widthOptions"
+                [value]="option">
+          {{option}}
+        </option>
+
+      </select>
+      <div class="formItem__indicator">
+        <ngx-fa name="chevron-down"
+                size="md">
+        </ngx-fa>
+      </div>
+
+    </div>
+    <div class="formItem">
+
+      <div class="formItem__label">Grid height</div>
+      <select formControlName="gridHeight"
+              aria-label="Select grid height"
+              class="ng-pristine ng-valid ng-touched">
+        <option *ngFor="let option of heightOptions"
+                [value]="option">
+          {{option}}
+        </option>
+      </select>
+      <div class="formItem__indicator">
+        <ngx-fa name="chevron-down"
+                size="md">
+        </ngx-fa>
+      </div>
+
+    </div>
+    <div class="formItem">
+
+      <div class="formItem__label">Speed</div>
+      <select formControlName="speed"
+              aria-label="Select game speed">
+        <option *ngFor="let speed of speedOptions"
+                [value]="speed">
+          {{speed}}
+        </option>
+      </select>
+      <div class="formItem__indicator">
+        <ngx-fa name="chevron-down"
+                size="md">
+        </ngx-fa>
+      </div>
+
+    </div>
+    <div class="formItem">
+
+      <div class="formItem__label">Initial life probability</div>
+      <select formControlName="initialLifePercentage"
+              aria-label="Select probability of life">
+        <option *ngFor="let option of initialLifeOptions"
+                [value]="option">
+          {{option}}%
+        </option>
+      </select>
+      <div class="formItem__indicator">
+        <ngx-fa name="chevron-down"
+                size="md">
+        </ngx-fa>
+      </div>
+
+    </div>
+    <div class="formItem">
+      <button *ngIf="state === GameState.Ongoing"
+              svd-button
+              type='button'
+              variant="small"
+              aria-label="Pause playback"
+              class="svd-button__small"
+              (click)="game.pause()">
+        Pause
+      </button>
+      <button *ngIf="state === GameState.Paused"
+              svd-button
+              type='button'
+              variant="small"
+              aria-label="Pause playback"
+              class="svd-button__small"
+              (click)="game.unpause()">
+        Unpause
+      </button>
+    </div>
+    <div class="formItem">
+
+      <ng-container *ngIf="state === GameState.Ended
+                    || state === GameState.NotStarted;
+                    else restartButton">
+        <button svd-button
+                type='button'
+                variant="small"
+                aria-label="Start game"
+                class="svd-button__small"
+                (click)="game.start()">
+          Start
+        </button>
+      </ng-container>
+
+    </div>
+  </div>
+</form>
+<span class="aliveLabel">Currently alive</span>
+<div class="alivePercentage">
+  <div class="alivePercentage__indicator"
+       style.width="{{alivePercentage}}%">
+    <span>{{alivePercentage}}%</span>
+  </div>
+</div>
+
+<table>
+  <tr *ngFor="let row of game.cells | async; let i = index">
+    <td *ngFor="let cell of row"
+        [ngClass]="cell.style">
+      <div></div>
+    </td>
+  </tr>
+</table>
+
+<ng-template #restartButton>
+  <button svd-button
+          variant="small"
+          type='button'
+          aria-label="Apply current settings"
+          class=" svd-button__small"
+          (click)="restart()">
+    Restart
+  </button>
+</ng-template>
