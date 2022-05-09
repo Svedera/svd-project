@@ -13,4 +13,7 @@ export class LayoutService {
 
   menuToggled = () =>
     this.menuVisibleStream.next(!this.menuVisibleStream.value);
+
+  closeMenu = () =>
+    this.menuVisibleStream.next(false);
 }

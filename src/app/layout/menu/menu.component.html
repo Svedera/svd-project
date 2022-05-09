@@ -8,7 +8,7 @@
 
     <a routerlinkactive="active"
        routerLink="/{{AppRouts.Article}}"
-       class="">
+       (click)="layout.closeMenu()">
       Article
       <ngx-fa size="md"
               name="file"></ngx-fa>
@@ -19,7 +19,7 @@
 
     <a routerlinkactive="active"
        routerLink="/{{AppRouts.ArticleList}}"
-       class="">
+       (click)="layout.closeMenu()">
       Table
       <ngx-fa size="md"
               name="table"></ngx-fa>
@@ -29,7 +29,8 @@
   <li>
 
     <a routerlinkactive="active"
-       routerLink="/{{AppRouts.GameOfLife}}">
+       routerLink="/{{AppRouts.GameOfLife}}"
+       (click)="layout.closeMenu()">
       Game of Life
       <ngx-fa size="md"
               name="photo"></ngx-fa>
