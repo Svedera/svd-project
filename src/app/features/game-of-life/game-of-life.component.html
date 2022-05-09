@@ -93,8 +93,7 @@
     </div>
     <div class="formItem">
 
-      <ng-container *ngIf="state === GameState.Ended
-                    || state === GameState.NotStarted;
+      <ng-container *ngIf="state === GameState.NotStarted;
                     else restartButton">
         <button svd-button
                 type='button'
