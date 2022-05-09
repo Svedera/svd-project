@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { catchError, Observable, timeout } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import {
   ApiConfiguration,
@@ -19,12 +19,13 @@ import { ArticleList } from 'src/app/core/backend-models/articleList';
 })
 export class ArticleService extends HttpBaseService implements ArticleHandler {
 
-  constructor(private http: HttpClient,
+  constructor(
+    private httpClient: HttpClient,
     private appConfig: AppConfiguration,
-    private timeouts: TimeoutConfiguration,
+    private timeoutConfig: TimeoutConfiguration,
     private apiPaths: ApiConfiguration,
     private logger: Logging) {
-    super(logger);
+    super(httpClient, logger, timeoutConfig);
   }
 
   public getArticle(id: string | null): Observable<Article> {
@@ -45,15 +46,4 @@ export class ArticleService extends HttpBaseService implements ArticleHandler {
 
     return this.httpGet(url, params);
   };
-
-  private httpGet<T>(
-    url: string,
-    params: HttpParams | undefined = undefined): Observable<T> {
-    return this.http
-      .get<T>(url, { params: params })
-      .pipe(
-        timeout(this.timeouts.requestTimeout),
-        catchError(this.handleError)
-      );
-  }
 }
