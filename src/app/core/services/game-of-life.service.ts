@@ -186,7 +186,7 @@ export class GameOfLifeService {
 
     this._cellsSubject.next(future);
 
-    const percentage = Math.round(alive / this._totalCells * 100);
+    const percentage = Math.ceil(alive / this._totalCells * 100);
     this._alivePercentageSubject.next(percentage);
   }
 
