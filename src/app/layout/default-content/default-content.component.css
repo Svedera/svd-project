@@ -1,27 +1,9 @@
 :host {
-  position: absolute;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+
+  color: var(--svd-secondaryColor);
   font-family: var(--svd-font);
-  text-align: center;
-  flex-direction: column
 }
 
 h1 {
-  font-size: 2.8125rem;
   color: var(--svd-highlightColor);
-  font-weight: 700;
-  margin: 0
-}
-
-p {
-  margin: 0;
-  font-size: 2.4375rem;
-  display: block;
-  text-align: center;
-  font-weight: 700
 }

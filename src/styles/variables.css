@@ -2,13 +2,18 @@
   --svd-font: BoosterNextFY;
   --svd-textFont: "Open Sans";
   --svd-rootFontSize: 16px;
-  --svd-highlightColor: #14cc76;
-  --svd-textColor: #3a3d57;
-  --svd-alternateTextColor: #fff;
-  --svd-secondaryColor: #ff57a2;
-  --svd-backgroundColor: #3a3d57;
-  --svd-linkHoverColor: #03875c;
-  --svd-blockColor: #efefef;
+
   --svd-menuWidth: 220px;
-  --svdMaxWidth: 1000px;
+  --svd-maxWidth: 1000px;
+  --svd-logoWidth: 7em;
+
+  --svd-backgroundColor: #E6F4F1;
+  --svd-panelsColor: #66A3BB;
+
+  --svd-highlightColor: #253A47;
+  --svd-secondaryColor: #8F7158;
+  --svd-linkHoverColor: #EEE8A9;
+
+  --svd-textColor: #253A47;
+  --svd-alternateTextColor: #fff;
 }

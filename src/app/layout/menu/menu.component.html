@@ -1,10 +1,14 @@
-<img [routerLink]="['/']"
-     aria-label="svd logo"
-     class="logo"
-     tabindex="0"
-     src="/assets/images/logo.svg">
-<ul>
-  <li>
+<div class="col">
+  <div class="d-flex justify-content-center">
+
+    <img [routerLink]="['/']"
+         aria-label="svd logo"
+         class="logo center-block"
+         role="button"
+         src="/assets/images/logo.png">
+
+  </div>
+  <div class="menu-item d-flex justify-content-center mt-4">
 
     <a routerlinkactive="active"
        routerLink="/{{AppRouts.Article}}"
@@ -14,8 +18,8 @@
               name="file"></ngx-fa>
     </a>
 
-  </li>
-  <li>
+  </div>
+  <div class="menu-item d-flex justify-content-center">
 
     <a routerlinkactive="active"
        routerLink="/{{AppRouts.ArticleList}}"
@@ -25,8 +29,8 @@
               name="table"></ngx-fa>
     </a>
 
-  </li>
-  <li>
+  </div>
+  <div class="menu-item d-flex justify-content-center">
 
     <a routerlinkactive="active"
        routerLink="/{{AppRouts.GameOfLife}}"
@@ -36,5 +40,5 @@
               name="photo"></ngx-fa>
     </a>
 
-  </li>
-</ul>
+  </div>
+</div>

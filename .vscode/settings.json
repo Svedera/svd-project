@@ -1,10 +1,12 @@
 {
-    "cSpell.words": [
-        "Conways",
-        "eqeqeq",
-        "ngneat",
-        "routerlink",
-        "routerlinkactive",
-        "Wiseman"
-    ]
+  "html.format.wrapAttributes": "force-aligned",
+  "cSpell.words": [
+    "Conways",
+    "eqeqeq",
+    "ngneat",
+    "routerlink",
+    "routerlinkactive",
+    "Svedera",
+    "Wiseman"
+  ]
 }

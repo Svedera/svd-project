@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;900&display=swap);
 
-@import "~@fortawesome/fontawesome-free/css/all.css";
-
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
 @import 'styles/variables.css';
 @import 'styles/fonts.css';
 @import 'styles/button.css';
@@ -17,10 +17,10 @@ body {
 body,
 html {
   background: var(--svd-backgroundColor);
-  padding: 0;
-  margin: 0;
-  color: var(--svd-alternateTextColor);
+  color: var(--svd-textColor);
   font-family: var(--svd-textFont);
+  height: 100%;
+  margin: 0 0 0 0;
 }
 
 h1,

@@ -61,7 +61,7 @@ const routes: Routes = [{
   component: DefaultContentComponent,
   pathMatch: 'full',
   data: {
-    title: 'Trinidad Wiseman'
+    title: 'Svedera Sandbox'
   }
 },
 {
@@ -69,7 +69,7 @@ const routes: Routes = [{
   component: DefaultContentComponent,
   pathMatch: 'full',
   data: {
-    title: 'Trinidad Wiseman'
+    title: 'Svedera Sandbox'
   }
 }];
 

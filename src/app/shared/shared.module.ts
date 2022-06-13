@@ -14,6 +14,9 @@ import { PagingComponent } from './paging/paging.component';
 import { GetPagePipe } from './pipes/get-page.pipe';
 import { TableRowComponent } from './table-row/table-row.component';
 import { FirstParagraphPipe } from './pipes/text-fragment.pipe';
+import {
+  RemoteStateWrapperComponent
+} from './remote-state-wrapper/remote-state-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { FirstParagraphPipe } from './pipes/text-fragment.pipe';
     FirstParagraphPipe,
     GetPagePipe,
 
+    RemoteStateWrapperComponent,
     ImageComponent,
     ChipComponent,
     TableComponent,
@@ -46,6 +50,7 @@ import { FirstParagraphPipe } from './pipes/text-fragment.pipe';
     TableComponent,
     TableRowComponent,
 
+    RemoteStateWrapperComponent,
     UrlAsBackgroundImagePipe,
     RemoveEmptyEntriesPipe,
     FirstParagraphPipe,

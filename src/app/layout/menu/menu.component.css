@@ -3,6 +3,7 @@
   background: #fff;
   top: 0;
   left: 0;
+  background: var(--svd-panelsColor);
   width: var(--svd-menuWidth);
   padding: 1.5625rem;
   height: 100vh;
@@ -23,17 +24,17 @@
 }
 
 .logo {
-  margin: 1.5625rem 0 3.125rem;
-  cursor: pointer;
+  width: var(--svd-logoWidth);
 }
 
-ul {
+
+.menu-item  {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-ul li a {
+.menu-item a {
   display: block;
   padding: 0.7rem 1rem;
   text-align: right;
@@ -46,8 +47,9 @@ ul li a {
   transform-origin: right center;
 }
 
-ul li a:hover,
-ul li a.active {
+.menu-item a:hover,
+.menu-item a.active {
   color: var(--svd-linkHoverColor);
   transform: scale(1.05);
 }
+
