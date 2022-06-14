@@ -9,5 +9,4 @@ import { Image } from 'src/app/core/backend-models/image';
 })
 export class ImageComponent {
   @Input() image: Image | null = null;
-
 }

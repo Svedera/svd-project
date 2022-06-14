@@ -12,7 +12,6 @@ import { RemoveEmptyEntriesPipe } from './pipes/remove-empty-entries.pipe';
 import { TableComponent } from './table/table.component';
 import { PagingComponent } from './paging/paging.component';
 import { GetPagePipe } from './pipes/get-page.pipe';
-import { TableRowComponent } from './table-row/table-row.component';
 import { FirstParagraphPipe } from './pipes/text-fragment.pipe';
 import {
   RemoteStateWrapperComponent
@@ -29,8 +28,7 @@ import {
     ImageComponent,
     ChipComponent,
     TableComponent,
-    PagingComponent,
-    TableRowComponent
+    PagingComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +46,6 @@ import {
     ImageComponent,
     ChipComponent,
     TableComponent,
-    TableRowComponent,
 
     RemoteStateWrapperComponent,
     UrlAsBackgroundImagePipe,

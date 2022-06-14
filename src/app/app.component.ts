@@ -9,7 +9,6 @@ import {
 } from '@angular/router';
 import { RemoteRouterState } from '@enums/remoteRouterState';
 
-
 @Component({
   selector: 'svd-root',
   templateUrl: './app.component.html',
