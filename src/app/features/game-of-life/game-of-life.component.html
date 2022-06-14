@@ -117,7 +117,7 @@
 </div>
 
 <table>
-  <tr *ngFor="let row of game.cells | async; let i = index">
+  <tr *ngFor="let row of game.cells | async">
     <td *ngFor="let cell of row"
         [ngClass]="cell.style">
       <div></div>

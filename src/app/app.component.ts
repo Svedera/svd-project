@@ -10,7 +10,6 @@ import {
 import { RemoteRouterState } from '@enums/remoteRouterState';
 import { LayoutService } from './core/services/layout.service';
 
-
 @Component({
   selector: 'svd-root',
   templateUrl: './app.component.html',

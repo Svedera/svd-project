@@ -21,5 +21,4 @@ export class FirstParagraphPipe implements PipeTransform {
     const fragment = text.substring(start + startLength, end);
     return fragment;
   }
-
 }

@@ -86,8 +86,6 @@ export class GameOfLifeComponent implements OnInit {
   }
 
   private getFormSettings(): GameSettings {
-    // eslint-disable-next-line no-console
-    console.warn(this.form.value)
     return this.form.value;
   };
 }

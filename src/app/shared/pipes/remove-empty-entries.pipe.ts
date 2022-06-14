@@ -8,5 +8,4 @@ export class RemoveEmptyEntriesPipe implements PipeTransform {
   transform(strings: string[]): string[] {
     return strings.filter(value => value);
   }
-
 }
