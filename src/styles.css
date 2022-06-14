@@ -31,39 +31,17 @@ h5 {
   font-family: var(--svd-font)
 }
 
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child {
-  margin-top: 0
-}
-
-h1:last-child,
-h2:last-child,
-h3:last-child,
-h4:last-child,
-h5:last-child {
-  margin-bottom: 0
-}
-
 h1 {
   font-size: 2.8125rem
 }
 
 h1,
 h2 {
-  text-align: center;
   text-transform: uppercase
 }
 
 h2 {
   font-size: 2rem;
-  margin: 3.75rem 0 0
-}
-
-p {
-  margin: 2.5rem 0
 }
 
 p a {
@@ -86,4 +64,16 @@ p a {
 
 .text-highlight {
   color: var(--svd-highlightColor)
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.sharp {
+  border-radius: 0;
+}
+
+.btn.sharp {
+  box-shadow: none;
 }

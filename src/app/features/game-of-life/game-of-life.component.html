@@ -1,5 +1,6 @@
 <h1>Conways Game of life</h1>
-<form [formGroup]="form">
+<form [formGroup]="form"
+      class="mb-2">
   <div class="form">
     <div class="formItem">
 
@@ -75,18 +76,16 @@
       <button *ngIf="state === GameState.Ongoing"
               svd-button
               type='button'
-              variant="small"
               aria-label="Pause playback"
-              class="svd-button__small"
+              class="btn sharp uppercase"
               (click)="game.pause()">
         Pause
       </button>
       <button *ngIf="state === GameState.Paused"
               svd-button
               type='button'
-              variant="small"
-              aria-label="Pause playback"
-              class="svd-button__small"
+              aria-label="Unpause playback"
+              class="btn sharp uppercase"
               (click)="game.unpause()">
         Unpause
       </button>
@@ -97,9 +96,8 @@
                     else restartButton">
         <button svd-button
                 type='button'
-                variant="small"
                 aria-label="Start game"
-                class="svd-button__small"
+                class="btn sharp uppercase"
                 (click)="game.start()">
           Start
         </button>
@@ -108,7 +106,7 @@
     </div>
   </div>
 </form>
-<span class="aliveLabel">Currently alive</span>
+<span class="fs-4">Currently alive</span>
 <div class="alivePercentage">
   <div class="alivePercentage__indicator"
        style.width="{{alivePercentage}}%">
@@ -127,10 +125,9 @@
 
 <ng-template #restartButton>
   <button svd-button
-          variant="small"
           type='button'
           aria-label="Apply current settings"
-          class=" svd-button__small"
+          class="btn sharp uppercase"
           (click)="restart()">
     Restart
   </button>
