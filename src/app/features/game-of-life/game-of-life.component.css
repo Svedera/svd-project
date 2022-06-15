@@ -94,7 +94,7 @@
   width: 10%;
   height: 100%;
   background: var(--svd-highlightColor);
-  color: ;
+  color: var(--alternateTextColor);
   transition: width .25s;
   text-align: right;
   font-size: .8125rem;

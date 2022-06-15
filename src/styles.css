@@ -9,6 +9,17 @@
 * {
   box-sizing: border-box;
 }
+/*
+.favicon {
+  background-color: var(--svd-panelColor);
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+} */
+
+.circle {
+  border-radius: 100%;
+}
 
 body {
   font-size: var(--svd-rootFontSize);
