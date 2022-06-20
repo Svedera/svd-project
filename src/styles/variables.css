@@ -16,4 +16,7 @@
 
   --svd-textColor: #253A47;
   --svd-alternateTextColor: #fff;
+
+  --svd-game-alive: #466F81;
+  --svd-game-dead: #b1c8cc;
 }

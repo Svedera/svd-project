@@ -9,15 +9,11 @@
 * {
   box-sizing: border-box;
 }
-/*
+
 .favicon {
-  background-color: var(--svd-panelColor);
+  background-color: var(--svd-panelsColor);
   width: 25px;
   height: 25px;
-  border-radius: 100%;
-} */
-
-.circle {
   border-radius: 100%;
 }
 
@@ -77,7 +73,7 @@ p a {
   color: var(--svd-highlightColor)
 }
 
-.upper-case {
+.uppercase {
   text-transform: uppercase;
 }
 
