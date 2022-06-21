@@ -1,8 +1,8 @@
-<h1>Conways Game of life</h1>
+<h1 class="text-center">Conways Game of life</h1>
 <form [formGroup]="form"
       class="mb-2">
-  <div class="form row">
-    <div class="col">
+  <div class="form row flex-row d-flex align-items-end">
+    <div class="col-md-3 col-lg-2 mt-2">
 
       <label for="gridWidthSelect"
              class="form-label">Grid width</label>
@@ -17,7 +17,7 @@
       </select>
 
     </div>
-    <div class="col">
+    <div class="col-md-3 col-lg-2 mt-2">
 
       <label for="gridHeightSelect"
              class="form-label">Grid height</label>
@@ -32,7 +32,7 @@
       </select>
 
     </div>
-    <div class="col">
+    <div class="col-md-3 col-lg-2 mt-2">
 
       <label for="speedSelect"
              class="form-label">Speed</label>
@@ -47,10 +47,10 @@
       </select>
 
     </div>
-    <div class="col">
+    <div class="col-md-3 col-lg-2 mt-2">
 
       <label for="initialLifeSelect"
-             class="form-label">Initial life probability</label>
+             class="form-label">Initial life</label>
       <select id="initialLifeSelect"
               formControlName="initialLifePercentage"
               class="form-select"
@@ -62,12 +62,12 @@
       </select>
 
     </div>
-    <div class="col d-flex align-items-end">
+    <div class="col-md-3 col-lg-2 d-flex align-items-end mt-2">
       <button *ngIf="state === GameState.Ongoing"
               svd-button
               type='button'
               aria-label="Pause playback"
-              class="btn sharp uppercase w-100"
+              class="btn sharp uppercase w-100 mt-1"
               (click)="game.pause()">
         Pause
       </button>
@@ -75,12 +75,12 @@
               svd-button
               type='button'
               aria-label="Unpause playback"
-              class="btn sharp uppercase w-100"
+              class="btn sharp uppercase w-100 mt-1"
               (click)="game.unpause()">
         Unpause
       </button>
     </div>
-    <div class="col d-flex align-items-end">
+    <div class="col-md-3 col-lg-2 align-items-end mt-2">
 
       <ng-container *ngIf="state === GameState.NotStarted;
                     else restartButton">
@@ -101,7 +101,7 @@
 <div class="mt-3 fs-4">Currently alive:</div>
 
 <ng-container *ngIf="alivePercentage <= 0; else aliveProgressBar">
-  All cells are dead
+  <p class="text-center">All cells are dead</p>
 </ng-container>
 
 <div class="d-flex justify-content-center mt-4">

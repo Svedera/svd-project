@@ -31,7 +31,7 @@
   font-size: 1rem;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--svd-text-color);
   width: 2.5em;
   height: 2.5em;
   border-radius: 2.5em;
@@ -43,12 +43,12 @@
 }
 
 .svd-button__transparent:hover {
-  border: #fff .0625rem solid
+  border: var(--svd-highlightColor) .0625rem solid
 }
 
 .svd-button__active {
-  background: white;
-  color: #333
+  background: var(--svd-highlightColor);
+  color: var(--svd-alternateTextColor);
 }
 
 [svd-button]+[svd-button] {
