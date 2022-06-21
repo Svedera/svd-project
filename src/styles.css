@@ -1,13 +1,20 @@
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;900&display=swap);
 
-@import "~@fortawesome/fontawesome-free/css/all.css";
-
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
 @import 'styles/variables.css';
 @import 'styles/fonts.css';
 @import 'styles/button.css';
 
 * {
   box-sizing: border-box;
+}
+
+.favicon {
+  background-color: var(--svd-panelsColor);
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
 }
 
 body {
@@ -17,10 +24,10 @@ body {
 body,
 html {
   background: var(--svd-backgroundColor);
-  padding: 0;
-  margin: 0;
-  color: var(--svd-alternateTextColor);
+  color: var(--svd-textColor);
   font-family: var(--svd-textFont);
+  height: 100%;
+  margin: 0 0 0 0;
 }
 
 h1,
@@ -31,39 +38,17 @@ h5 {
   font-family: var(--svd-font)
 }
 
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child {
-  margin-top: 0
-}
-
-h1:last-child,
-h2:last-child,
-h3:last-child,
-h4:last-child,
-h5:last-child {
-  margin-bottom: 0
-}
-
 h1 {
   font-size: 2.8125rem
 }
 
 h1,
 h2 {
-  text-align: center;
   text-transform: uppercase
 }
 
 h2 {
   font-size: 2rem;
-  margin: 3.75rem 0 0
-}
-
-p {
-  margin: 2.5rem 0
 }
 
 p a {
@@ -86,4 +71,16 @@ p a {
 
 .text-highlight {
   color: var(--svd-highlightColor)
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.sharp {
+  border-radius: 0;
+}
+
+.btn.sharp {
+  box-shadow: none;
 }

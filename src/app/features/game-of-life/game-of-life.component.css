@@ -1,81 +1,22 @@
- table {
-  margin: 0 auto;
-  table-layout: fixed;
-  box-sizing: border-box
-}
-
- td {
+td {
   width: .75rem;
   height: .75rem;
-  padding: 0
 }
 
- td div {
+td div {
   width: 100%;
   height: 100%
 }
 
- td.alive div {
-  background: white
+td.alive div {
+  background: var(--svd-game-alive);
 }
 
- td.grave div {
-  background: #adf0d028
+td.grave div {
+  background: var(--svd-game-dead);
 }
 
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  grid-gap: 1.25rem;
-  gap: 1.25rem
-}
-
-.form .formItem {
-  flex-grow: 1;
-  position: relative
-}
-
-.form .formItem__label {
-  font-size: 1rem;
-  margin: 0 0 .3125rem
-}
-
-.form .formItem select {
-  display: block;
-  width: 100%;
-  height: 2.375rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  padding: 0 1rem;
-  border-radius: .5rem;
-  cursor: pointer
-}
-
-.form .formItem [svd-button] {
-  width: 100%;
-  margin: 1.6875rem 0 0
-}
-
-.form .formItem__indicator {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 2.375rem;
-  height: 2.375rem;
-  pointer-events: none;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-
-.aliveLabel {
-  margin-top: 1.5rem;
-  display: block
-}
-
-.alivePercentage {
+.alive-percentage {
   display: block;
   width: 100%;
   height: 2rem;
@@ -86,7 +27,7 @@
   margin: 0 0 1.25rem
 }
 
-.alivePercentage__indicator {
+.alive-percentage__indicator {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -94,6 +35,7 @@
   width: 10%;
   height: 100%;
   background: var(--svd-highlightColor);
+  color: var(--svd-alternateTextColor);
   transition: width .25s;
   text-align: right;
   font-size: .8125rem;
@@ -101,11 +43,7 @@
   text-shadow: .0625rem .0625rem .0625rem rgba(0, 0, 0, .7)
 }
 
-.alivePercentage__indicator span {
+.alive-percentage__indicator span {
   display: block;
   padding: 0 .625rem
-}
-
-.aliveLabel {
-  font-size: 1rem
 }

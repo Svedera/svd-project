@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { AppRouts } from '@enums/appRouts';
 import { LayoutService } from '@services/layout.service';
+import { Icon } from '@enums/icons';
 
 @UntilDestroy()
 @Component({
@@ -12,6 +13,7 @@ import { LayoutService } from '@services/layout.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  Icon = Icon;
   AppRouts = AppRouts;
 
   @Input() visibilityStream: Observable<boolean> | null = null;

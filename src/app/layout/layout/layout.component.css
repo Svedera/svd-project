@@ -1,0 +1,9 @@
+.content {
+  margin-left: var(--svd-menuWidth);
+}
+
+@media screen and (max-width: 960px) {
+  .content {
+    margin-left: 0;
+  }
+}

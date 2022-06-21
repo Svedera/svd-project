@@ -1,11 +1,11 @@
 <container-element [ngSwitch]="state">
   <ng-container *ngSwitchCase="RemoteRouterState.Start">
-    <div class="page-center">
+    <div class="text-center">
       <img src="assets/images/loader.svg">
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="RemoteRouterState.Error">
-    <div class="page-center">
+    <div class="text-center">
       <p>Something went wrong
       <i class="fa-solid fa-fw fa-heart-crack"></i></p>
     </div>

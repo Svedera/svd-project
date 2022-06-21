@@ -1,13 +1,8 @@
-<svd-header (menuToggled)="menuToggled()"></svd-header>
-<svd-menu [visibilityStream]="layout.menuVisible"></svd-menu>
+<svd-layout class="h-100">
 
-<div id="mainContent"
-     class="page">
-  <div class="inline">
+  <svd-remote-state-wrapper class="h-100"
+                            [state]="routerState">
+    <router-outlet></router-outlet>
+  </svd-remote-state-wrapper>
 
-    <svd-remote-state-wrapper [state]="routerState">
-      <router-outlet></router-outlet>
-    </svd-remote-state-wrapper>
-
-  </div>
-</div>
+</svd-layout>

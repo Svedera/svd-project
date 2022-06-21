@@ -12,8 +12,8 @@ table {
 }
 
 table th {
-  background: #333;
-  color: #fff;
+  background: var(--svd-highlightColor);
+  color: var(--svd-alternateTextColor);
   text-align: left;
   white-space: nowrap
 }
@@ -24,7 +24,7 @@ table th button {
   appearance: none;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--svd-alternateTextColor);
   cursor: pointer;
   padding: 0;
   font-size: 1rem;
@@ -44,7 +44,7 @@ table th button.disabled {
 table th,
 table td {
   padding: .625rem 1rem;
-  border-bottom: #fff .0625rem solid
+  border-bottom: var(--svd-selectedRowBackground) .0625rem solid
 }
 
 @media screen and (max-width: 960px) {
@@ -70,7 +70,7 @@ table .clickable td {
   }
 }
 
-table .active td {
-  background: #fff !important;
-  color: #333 !important
+table tr.active td {
+  background: var(--svd-selectedRowBackground);
+  color: var(--svd-textColor);
 }

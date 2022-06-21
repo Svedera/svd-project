@@ -1,0 +1,9 @@
+<div class="d-flex flex-column h-100">
+
+  <svd-header (menuToggled)="menuToggled()"></svd-header>
+  <svd-menu [visibilityStream]="layout.menuVisible"></svd-menu>
+  <div class="content flex-grow-1 p-5">
+    <ng-content></ng-content>
+  </div>
+
+</div>

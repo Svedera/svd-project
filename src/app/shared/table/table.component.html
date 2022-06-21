@@ -33,8 +33,7 @@
         </tr>
       </thead>
       <tbody>
-        <ng-container
-                      *ngFor="let row of sortedRecords! |
+        <ng-container *ngFor="let row of sortedRecords! |
                                     getPage:columns!:pagingView!.elementsRange">
 
           <tr role="button"
@@ -63,8 +62,7 @@
     </table>
   </div>
 
-  <svd-paging [view]="
-                            pagingView"
+  <svd-paging [view]="pagingView"
               (shiftPage)="shiftPage($event)">
   </svd-paging>
 </ng-template>

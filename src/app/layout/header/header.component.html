@@ -1,15 +1,7 @@
-<button aria-label="Toggle menu"
-        (click)="menuToggled.emit()">
-
-  <ngx-fa name="bars"
-          size="lg">
-    <i aria-hidden="true"
-       class="fa fa-bars fa-lg"></i>
-  </ngx-fa>
-
-</button>
-<img routerlink="/"
-     tabindex="0"
-     aria-label="svd logo"
-     class="logo"
-     src="/assets/images/logo.svg">
+<nav class="svd-navbar navbar sticky-top w-100">
+  <div class="container-fluid">
+    <i class="{{ Icon.Menu }}"
+       role="button"
+       (click)="menuToggled.emit()"></i>
+  </div>
+</nav>
