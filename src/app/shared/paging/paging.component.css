@@ -4,14 +4,9 @@ button.disabled {
   border: none
 }
 
-.buttonWrapper {
-  text-align: center;
-  margin-top: 20px
-}
-
 @media screen and (max-width: 960px) {
   .buttonWrapper [svd-button] {
-    width: 2rem;
-    height: 2rem
+    width: 1.5rem;
+    height: 1.5rem
   }
 }
