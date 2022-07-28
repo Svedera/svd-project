@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import {
   ApiConfiguration,
   AppConfiguration,
+  RuntimeConfiguration,
   TimeoutConfiguration
 } from 'src/app/core/models/appConfiguration';
 import { Article } from 'src/app/core/backend-models/article';
@@ -22,6 +23,7 @@ export class ArticleService extends HttpBaseService implements ArticleHandler {
   constructor(
     private httpClient: HttpClient,
     private appConfig: AppConfiguration,
+    private runtime: RuntimeConfiguration,
     private timeoutConfig: TimeoutConfiguration,
     private apiPaths: ApiConfiguration,
     private logger: Logging) {
@@ -29,21 +31,24 @@ export class ArticleService extends HttpBaseService implements ArticleHandler {
   }
 
   public getArticle(id: string | null): Observable<Article> {
-    const param = id ?? this.appConfig.defaultArticleId;
-    const url = `${this.apiPaths.articleUrl}/${param}`;
+    const articleId = id ?? this.appConfig.article.defaultArticleId;
+
+    const base = this.runtime.apiBaseUrl;
+    const url = `${base}${this.apiPaths.articleUrl}/${articleId}`;
 
     return this.httpGet(url);
   };
 
   public getArticleList(): Observable<ArticleList> {
-    const limit = this.appConfig.defaultListLimit;
+    const limit = this.appConfig.article.defaultListLimit;
     return this.getArticleListWithLimit(limit);
   };
 
   public getArticleListWithLimit(limit: number): Observable<ArticleList> {
-    const url = this.apiPaths.articleUrl;
-    let params = new HttpParams().set('limit', limit);
+    const base = this.runtime.apiBaseUrl;
+    const url = `${base}${this.apiPaths.articleUrl}`;
 
+    let params = new HttpParams().set('limit', limit);
     return this.httpGet(url, params);
   };
 }

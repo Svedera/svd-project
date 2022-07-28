@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LogLevel } from '@enums/logLevel';
-import { AppConfiguration } from 'src/app/core/models/appConfiguration';
+import { RuntimeConfiguration } from 'src/app/core/models/appConfiguration';
 
 import { Logging } from './abstract/logging';
 
@@ -9,7 +9,7 @@ import { Logging } from './abstract/logging';
 })
 export class LoggingService implements Logging {
 
-  constructor(private configuration: AppConfiguration) { }
+  constructor(private configuration: RuntimeConfiguration) { }
 
   trace = (message: string) => this.log(message, LogLevel.Trace);
   debug = (message: string) => this.log(message, LogLevel.Debug);
