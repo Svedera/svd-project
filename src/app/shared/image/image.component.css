@@ -50,6 +50,7 @@
 }
 
 .image__title {
+  color: var(--svd-alternateTextColor);
   position: absolute;
   bottom: 0;
   left: 0;

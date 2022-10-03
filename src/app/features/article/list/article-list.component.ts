@@ -39,7 +39,7 @@ export class ArticleListComponent implements OnInit {
   ngOnInit(): void {
     const articleLst =
       this.route.snapshot.data.articleLst as ArticleList ?? null;
-    this.records = articleLst.list;
+    this.records = articleLst?.list;
     this.recordsStream = of(this.records);
 
     this.columnData = this.createColumns();

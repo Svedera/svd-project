@@ -26,7 +26,13 @@
       "@models/*": ["src/app/core/models/*"],
       "@backend-models/*": ["src/app/core/backend-models/*"],
       "@enums/*": ["src/app/core/enums/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@shared/*": ["src/app/shared/*"],
+
+      "@article/*": ["src/app/features/article/*"],
+      "@drawings/*": ["src/app/features/drawings/*"],
+      "@game-of-life/*": ["src/app/features/game-of-life/*"],
+      "@test/*": ["src/app/features/test/*"],
+
     }
   },
   "angularCompilerOptions": {

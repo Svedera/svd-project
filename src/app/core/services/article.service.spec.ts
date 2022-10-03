@@ -9,7 +9,7 @@ import {
   ApiConfiguration,
   TimeoutConfiguration
 } from 'src/app/core/models/appConfiguration';
-import { ApiConfig, TimeoutConfig } from 'src/app/app.config';
+import { ApiConfigSuffix, TimeoutConfig } from 'src/app/app.config';
 
 describe('ArticleService', () => {
   let httpTestingController: HttpTestingController;
@@ -21,7 +21,7 @@ describe('ArticleService', () => {
       providers: [
         ArticleService,
         { provide: TimeoutConfiguration, useValue: TimeoutConfig },
-        { provide: ApiConfiguration, useValue: ApiConfig }
+        { provide: ApiConfiguration, useValue: ApiConfigSuffix }
       ]
     });
 

@@ -18,6 +18,9 @@ import { AppRouts } from '@enums/appRouts';
 import {
   GameOfLifeComponent
 } from './features/game-of-life/game-of-life.component';
+import {
+  DrawingsComponent
+} from './features/drawings/drawings.component';
 
 const routes: Routes = [{
   path: `${AppRouts.Article}/:id`,
@@ -54,6 +57,13 @@ const routes: Routes = [{
   component: GameOfLifeComponent,
   data: {
     title: 'Game of life'
+  }
+},
+{
+  path: `${AppRouts.Drawings}`,
+  component: DrawingsComponent,
+  data: {
+    title: 'Drawings'
   }
 },
 {
