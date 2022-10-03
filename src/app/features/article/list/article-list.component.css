@@ -11,33 +11,33 @@
   background: center center no-repeat;
   background-size: cover;
   margin: .375rem;
-  background-color: #f1f1f1
+  background-color: var(--svd-selectedRowBackground);
 }
 
-.tab .body {
+.tab .article-body {
   padding-left: 1rem
 }
 
-.tab .body p {
+.tab .article-body p {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
-.tab .body p:not(:first-child) {
+.tab .article-body p:not(:first-child) {
   display: none;
 }
 
-.tab .body {
+.tab .article-body {
   margin-right: 2em;
 }
 
-.tab .body p:first-child {
+.tab .article-body p:first-child {
   margin-top: 0;
 }
 
-.tab .body p:last-child {
+.tab .article-body p:last-child {
   margin-bottom: 0;
 }
 

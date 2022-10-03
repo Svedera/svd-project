@@ -1,9 +1,4 @@
 :host {
-
   color: var(--svd-secondaryColor);
-  font-family: var(--svd-font);
 }
 
-h1 {
-  color: var(--svd-highlightColor);
-}

@@ -16,15 +16,14 @@
          [style.background-image]="
                                 article.image!.medium | urlAsBackgroundImage">
     </div>
-    <div class="body">
-      <div tabindex="0">
-        <p>{{article.body | firstParagraph}}</p>
+    <div class="article-body">
+      <p class="text-center mt-2">{{article.body | firstParagraph}}</p>
+      <div class="d-flex justify-content-end w-100">
+        <a svd-button
+           class="btn btn-sm sharp uppercase"
+           routerlinkactive="active"
+           routerLink="/{{AppRouts.Article}}/{{article.id}}">Read more</a>
       </div>
-      <a svd-button
-         variant="small"
-         class="svd-button__small"
-         routerlinkactive="active"
-         routerLink="/{{AppRouts.Article}}/{{article.id}}">Read more</a>
     </div>
   </div>
 </ng-template>
