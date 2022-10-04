@@ -7,10 +7,10 @@ describe('DrawingService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DrawingService);
   });
 
-  it('should be created', () => {
+  test('should be created', () => {
+    service = new DrawingService();
     expect(service).toBeTruthy();
   });
 });

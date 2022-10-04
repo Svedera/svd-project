@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { ColumnDataBase, RowData } from '@models/tableData';
+import { ColumnDataBase, RowData } from '@models/article/tableData';
 
 @Pipe({
   name: 'getPage'

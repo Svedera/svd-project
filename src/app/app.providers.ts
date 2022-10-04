@@ -8,13 +8,13 @@ import {
   TimeoutConfiguration
 } from 'src/app/core/models/appConfiguration';
 import { ArticleHandler } from '@services/abstract/articleHandler';
-import { ArticleService } from '@services/article.service';
+import { ArticleService } from '@services/article/article.service';
 import { Logging } from '@services/abstract/logging';
 import { LoggingService } from '@services/logging.service';
 import { LayoutService } from '@services/layout.service';
-import { RuntimeConfigService } from '@services/app-configuration.service';
+import { ConfigurationService } from '@services/app-configuration.service';
 
-export const initConfig = (appConfig: RuntimeConfigService) => {
+export const initConfig = (appConfig: ConfigurationService) => {
   return () => appConfig.loadConfig();
 }
 
@@ -22,13 +22,13 @@ export const AppProviders: Provider[] = [
   {
     provide: APP_INITIALIZER,
     useFactory: initConfig,
-    deps: [RuntimeConfigService],
+    deps: [ConfigurationService],
     multi: true,
   },
   {
     provide: RuntimeConfiguration,
-    deps: [RuntimeConfigService],
-    useFactory: (service: RuntimeConfigService) =>
+    deps: [ConfigurationService],
+    useFactory: (service: ConfigurationService) =>
       service.getConfig()
   },
   {

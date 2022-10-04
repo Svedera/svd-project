@@ -15,13 +15,15 @@ import { SharedModule } from './shared/shared.module';
 import {
   GameOfLiveModule
 } from './features/game-of-life/game-of-life.module';
-import { TestComponent } from '@test/test/test.component';
 import { DrawingModule } from '@drawings/drawings.module';
+import {
+  FinanceModule
+} from './features/finance/finance.module';
+import { TestModule } from '@test/test/test.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TestComponent,
+    AppComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,9 @@ import { DrawingModule } from '@drawings/drawings.module';
     LayoutModule,
     SharedModule,
     GameOfLiveModule,
-    DrawingModule
+    DrawingModule,
+    FinanceModule,
+    TestModule
   ],
   providers: AppProviders,
   bootstrap: [AppComponent]

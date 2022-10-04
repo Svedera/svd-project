@@ -1,6 +1,6 @@
 import { Point, Size } from '@models/drawings/elements';
 import { LineSettings } from '@models/drawings/settings';
-import { DrawingHandler } from './abstract/drawingHandler';
+import { DrawingHandler } from '@services/abstract/drawingHandler';
 
 export class DrawingService implements DrawingHandler {
   private canvas: HTMLCanvasElement | null = null;

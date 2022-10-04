@@ -9,7 +9,7 @@ import { LogLevel } from '@enums/logLevel';
 @Injectable({
   providedIn: 'root'
 })
-export class RuntimeConfigService {
+export class ConfigurationService {
   private config: RuntimeConfiguration = {
     apiBaseUrl: '',
     logLevel: LogLevel.All

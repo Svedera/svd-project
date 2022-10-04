@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
+import { ConfigurationService } from './app-configuration.service';
 
-import { RuntimeConfigService } from './app-configuration.service';
 
 describe('AppConfigurationService', () => {
-  let service: RuntimeConfigService;
+  let service: ConfigurationService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(RuntimeConfigService);
+    service = TestBed.inject(ConfigurationService);
   });
 
-  it('should be created', () => {
+  test('should be created', () => {
     expect(service).toBeTruthy();
   });
 });

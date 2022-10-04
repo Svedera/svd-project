@@ -11,9 +11,9 @@ import {
 } from 'src/app/core/models/appConfiguration';
 import { Article } from 'src/app/core/backend-models/article';
 import { ArticleHandler } from '@services/abstract/articleHandler';
-import { Logging } from './abstract/logging';
-import { HttpBaseService } from './http-base.service';
 import { ArticleList } from 'src/app/core/backend-models/articleList';
+import { HttpBaseService } from '@services/http-base.service';
+import { Logging } from '@services/abstract/logging';
 
 @Injectable({
   providedIn: 'root'
