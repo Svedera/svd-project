@@ -1,6 +1,7 @@
 {
   "html.format.wrapAttributes": "force-aligned",
   "cSpell.words": [
+    "compodoc",
     "Conways",
     "devkit",
     "eqeqeq",
