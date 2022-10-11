@@ -21,6 +21,7 @@ import {
 import {
   DrawingsComponent
 } from './features/drawings/drawings.component';
+import { FinanceDashboardComponent } from './features/finance/finance-dashboard/finance-dashboard.component';
 
 const routes: Routes = [{
   path: `${AppRouts.Article}/:id`,
@@ -64,6 +65,13 @@ const routes: Routes = [{
   component: DrawingsComponent,
   data: {
     title: 'Drawings'
+  }
+},
+{
+  path: `${AppRouts.Finance}`,
+  component: FinanceDashboardComponent,
+  data: {
+    title: 'Finance'
   }
 },
 {
