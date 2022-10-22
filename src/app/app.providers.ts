@@ -13,6 +13,12 @@ import { Logging } from '@services/abstract/logging';
 import { LoggingService } from '@services/logging.service';
 import { LayoutService } from '@services/layout.service';
 import { ConfigurationService } from '@services/app-configuration.service';
+import {
+  OperationCategoryService
+} from '@services/finance/operation-category.service';
+import {
+  OperationCategoryHandler
+} from '@services/abstract/operationCategoryHandler';
 
 export const initConfig = (appConfig: ConfigurationService) => {
   return () => appConfig.loadConfig();
@@ -42,6 +48,10 @@ export const AppProviders: Provider[] = [
   },
   {
     provide: ArticleHandler, useClass: ArticleService
+  },
+  {
+    provide: OperationCategoryHandler,
+    useClass: OperationCategoryService
   },
   {
     provide: Logging, useClass: LoggingService

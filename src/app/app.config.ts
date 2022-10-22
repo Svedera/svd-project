@@ -18,7 +18,8 @@ export const TimeoutConfig: TimeoutConfiguration = {
 
 export const ApiConfigSuffix: ApiConfiguration = {
   articleUrl: '/api/list',
-  listUrl: '/api/list'
+  listUrl: '/api/list',
+  operationCategory: '/api/operation-category'
 }
 
 export const ArticleConfig: ArticleConfiguration = {
