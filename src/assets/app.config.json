@@ -1,4 +1,4 @@
 {
-  "apiBaseUrl": "https://midaiganes.irw.ee",
+  "apiBaseUrl": "https://localhost",
   "logLevel": 0
 }
