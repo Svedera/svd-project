@@ -6476,7 +6476,7 @@
         },
         {
             "name": "OperationCategoryComponent",
-            "id": "component-OperationCategoryComponent-fabf37b5ebd2573d6366b8590bb6d5616d70dc8a8e2ed5e23693367fa63873a6456eb74ccfa1b395bec99f5a5ef2155b0a7e9205f1c29f988df3d4a48014c59a",
+            "id": "component-OperationCategoryComponent-b0276f9388283342b7e3b9035f6ca5256787c9645e2145ac5d9961bac14547a608dfe981c1ef55a107652d56a2315d7eb9669139be3aaf125b3a125bad36fe43",
             "file": "src/app/features/finance/operation-category/operation-category.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -6498,14 +6498,46 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 19,
                     "type": "OperationCategory | null",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "color",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "form",
+                    "defaultValue": "this.formBuilder.group({\n    name: [\n      null,\n      [\n        Validators.required,\n        Validators.maxLength(60)\n\n      ]]\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -6513,7 +6545,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { OperationCategory } from '@backend-models/finance/operationCategory';\n\n@Component({\n  selector: 'svd-operation-category',\n  templateUrl: './operation-category.component.html',\n  styleUrls: ['./operation-category.component.css']\n})\nexport class OperationCategoryComponent {\n  @Input() operationCategory: OperationCategory | null = null;\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  FormBuilder,\n  FormGroup,\n  Validators\n} from '@angular/forms';\n\nimport {\n  OperationCategory\n} from '@backend-models/finance/operationCategory';\nimport { generateRandomHex } from '@shared/utilities/color';\n\n@Component({\n  selector: 'svd-operation-category',\n  templateUrl: './operation-category.component.html',\n  styleUrls: ['./operation-category.component.css']\n})\nexport class OperationCategoryComponent implements OnInit {\n  @Input() operationCategory: OperationCategory | null = null;\n\n  color: string = '';\n\n  form: FormGroup = this.formBuilder.group({\n    name: [\n      null,\n      [\n        Validators.required,\n        Validators.maxLength(60)\n\n      ]]\n  });\n\n  constructor(private formBuilder: FormBuilder) { }\n\n  ngOnInit(): void {\n    if(this.operationCategory == null){\n      this.color = generateRandomHex();\n      // eslint-disable-next-line no-console\n      console.warn(generateRandomHex());\n      // eslint-disable-next-line no-console\n      console.warn(this.color);\n      return;\n    }\n\n    this.form.controls.name.setValue(this.operationCategory.name);\n    this.color = this.operationCategory.color;\n    console.warn(this.operationCategory.color);\n  }\n}\n\n\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -6522,7 +6554,36 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<form>\n  <div class=\"mb-3\">\n    <label for=\"categoryName\" class=\"form-label\">Name</label>\n    <input type=\"email\" class=\"form-control\" id=\"categoryName\" aria-describedby=\"categoryName\">\n  </div>\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n</form>\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 31,
+                "jsdoctags": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"mb-3\">\n\n  <label for=\"categoryName\"\n         class=\"form-label\">Category name:</label>\n  <div class=\"d-flex\">\n    <form [formGroup]=\"form\"\n          class=\"flex-fill me-2\">\n\n      <input class=\"form-control\"\n             id=\"categoryName\"\n             aria-describedby=\"categoryName\"\n             placeholder=\"Enter category name...\"\n             formControlName=\"name\">\n    </form>\n    <ngx-colors ngx-colors-trigger\n                [(ngModel)]=\"color\"></ngx-colors>\n\n  </div>\n\n</div>\n<div class=\"d-grid gap-2 d-md-flex justify-content-md-end mx-auto\">\n  <button *ngIf=\"this.color !== ''\"\n          type=\"submit\"\n          class=\"btn btn-primary\">Save\n  </button>\n  Color: {{this.color}}\n</div>\n"
         },
         {
             "name": "OperationComponent",
@@ -7573,13 +7634,13 @@
         },
         {
             "name": "SharedModule",
-            "id": "module-SharedModule-601f1de15dfcf4826cec97d5c9e9e3034274fa5b634f24d130eb4b6142898fa3a8b3a15fed5ef8a31794dde45aa7c88c1973d4c4d5c9ec1b05607fa08f60a5dc",
+            "id": "module-SharedModule-61d9a2909c42fd4678a6fe235275d755c5971d872aac07acdee12760b37f755891ba6ea2ab2788c6c02f995a38ba2329cb8e86f14d61343da6f799ad6add1bd3",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\nimport { NgxFontAwesomeModule } from 'ngx-font-awesome';\n\nimport { ImageComponent } from './image/image.component';\nimport { ChipComponent } from './chip/chip.component';\nimport { UrlAsBackgroundImagePipe } from './pipes/url-as-background-image.pipe';\nimport { RemoveEmptyEntriesPipe } from './pipes/remove-empty-entries.pipe';\nimport { TableComponent } from './table/table.component';\nimport { PagingComponent } from './paging/paging.component';\nimport { GetPagePipe } from './pipes/get-page.pipe';\nimport { FirstParagraphPipe } from './pipes/text-fragment.pipe';\nimport {\n  RemoteStateWrapperComponent\n} from './remote-state-wrapper/remote-state-wrapper.component';\n\n@NgModule({\n  declarations: [\n    UrlAsBackgroundImagePipe,\n    RemoveEmptyEntriesPipe,\n    FirstParagraphPipe,\n    GetPagePipe,\n\n    RemoteStateWrapperComponent,\n    ImageComponent,\n    ChipComponent,\n    TableComponent,\n    PagingComponent\n  ],\n  imports: [\n    CommonModule,\n    RouterModule,\n    ReactiveFormsModule,\n    FormsModule,\n\n    NgxFontAwesomeModule\n  ],\n  exports: [\n    CommonModule,\n\n    NgxFontAwesomeModule,\n\n    ImageComponent,\n    ChipComponent,\n    TableComponent,\n\n    RemoteStateWrapperComponent,\n    UrlAsBackgroundImagePipe,\n    RemoveEmptyEntriesPipe,\n    FirstParagraphPipe,\n    FormsModule,\n    ReactiveFormsModule,\n    RouterModule\n  ]\n})\nexport class SharedModule {\n}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\nimport { NgxFontAwesomeModule } from 'ngx-font-awesome';\nimport { NgxColorsModule } from 'ngx-colors';\n\nimport { ImageComponent } from './image/image.component';\nimport { ChipComponent } from './chip/chip.component';\nimport { UrlAsBackgroundImagePipe } from './pipes/url-as-background-image.pipe';\nimport { RemoveEmptyEntriesPipe } from './pipes/remove-empty-entries.pipe';\nimport { TableComponent } from './table/table.component';\nimport { PagingComponent } from './paging/paging.component';\nimport { GetPagePipe } from './pipes/get-page.pipe';\nimport { FirstParagraphPipe } from './pipes/text-fragment.pipe';\nimport {\n  RemoteStateWrapperComponent\n} from './remote-state-wrapper/remote-state-wrapper.component';\n\n@NgModule({\n  declarations: [\n    UrlAsBackgroundImagePipe,\n    RemoveEmptyEntriesPipe,\n    FirstParagraphPipe,\n    GetPagePipe,\n\n    RemoteStateWrapperComponent,\n    ImageComponent,\n    ChipComponent,\n    TableComponent,\n    PagingComponent\n  ],\n  imports: [\n    CommonModule,\n    RouterModule,\n    ReactiveFormsModule,\n    FormsModule,\n\n    NgxColorsModule,\n    NgxFontAwesomeModule\n  ],\n  exports: [\n    CommonModule,\n\n    NgxColorsModule,\n    NgxFontAwesomeModule,\n\n    ImageComponent,\n    ChipComponent,\n    TableComponent,\n\n    RemoteStateWrapperComponent,\n    UrlAsBackgroundImagePipe,\n    RemoveEmptyEntriesPipe,\n    FirstParagraphPipe,\n    FormsModule,\n    ReactiveFormsModule,\n    RouterModule\n  ]\n})\nexport class SharedModule {\n}\n",
             "children": [
                 {
                     "type": "providers",
@@ -7709,14 +7770,14 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "actionsData",
+                "name": "Add",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
+                "file": "src/app/features/finance/operation/opeartion.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  onPinTask: action('onPinTask'),\n  onArchiveTask: action('onArchiveTask'),\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Add",
@@ -7809,6 +7870,16 @@
                 "defaultValue": "(content: string, width = 100, height = 100): string =>\n  `\n  <div style=\"\n      width: ${width}vw;\n      height: ${height}vh;\n      border: 5px solid red;\n      box-sizing: border-box;\n      background: gray;\">\n    ${content}\n  </div>\n`"
             },
             {
+                "name": "generateRandomHex",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/utilities/color.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => {\n\n  const randomNumber = Math.random() * 16777215;\n  const randomHexNumber = Math.floor(randomNumber).toString(16);\n  const randomHex = `#${randomHexNumber}`;\n  return randomHex;\n}"
+            },
+            {
                 "name": "getGroupName",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -7817,6 +7888,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "(component: { name: string }, category?: Category): string => {\n    const storyName = component.name.replace('Component', '');\n    const categoryName = category ? category : Category.Others;\n    return `${categoryName}/${storyName}`;\n  }"
+            },
+            {
+                "name": "getModuleMetadata",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => moduleMetadata({\n  declarations: [\n    OperationCategoryComponent\n  ],\n  imports: [\n    SharedModule\n  ],\n})"
             },
             {
                 "name": "initConfig",
@@ -7922,11 +8003,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/features/finance/operation/opeartion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: args\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinTask: actionsData.onPinTask,\n    onArchiveTask: actionsData.onArchiveTask,\n  },\n})"
+                "defaultValue": "args => ({\n  props: args\n})"
             },
             {
                 "name": "TimeoutConfig",
@@ -7937,6 +8028,26 @@
                 "deprecationMessage": "",
                 "type": "TimeoutConfiguration",
                 "defaultValue": "{\n  requestTimeout: 3000\n}"
+            },
+            {
+                "name": "title",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/features/finance/operation/opeartion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "getGroupName(\n  OperationComponent,\n  Category.Screens)"
+            },
+            {
+                "name": "title",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "getGroupName(\n  OperationCategoryComponent,\n  Category.Screens)"
             }
         ],
         "functions": [],
@@ -8534,17 +8645,39 @@
             }
         ],
         "groupedVariables": {
-            "src/app/features/finance/operation-category/opeartion-category.stories.ts": [
+            "src/app/features/finance/operation/opeartion.stories.ts": [
                 {
-                    "name": "actionsData",
+                    "name": "Add",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
+                    "file": "src/app/features/finance/operation/opeartion.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  onPinTask: action('onPinTask'),\n  onArchiveTask: action('onArchiveTask'),\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/features/finance/operation/opeartion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: args\n})"
+                },
+                {
+                    "name": "title",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/features/finance/operation/opeartion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "getGroupName(\n  OperationComponent,\n  Category.Screens)"
+                }
+            ],
+            "src/app/features/finance/operation-category/opeartion-category.stories.ts": [
                 {
                     "name": "Add",
                     "ctype": "miscellaneous",
@@ -8566,6 +8699,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "getModuleMetadata",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => moduleMetadata({\n  declarations: [\n    OperationCategoryComponent\n  ],\n  imports: [\n    SharedModule\n  ],\n})"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -8573,7 +8716,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinTask: actionsData.onPinTask,\n    onArchiveTask: actionsData.onArchiveTask,\n  },\n})"
+                    "defaultValue": "args => ({\n  props: args\n})"
+                },
+                {
+                    "name": "title",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "getGroupName(\n  OperationCategoryComponent,\n  Category.Screens)"
                 }
             ],
             "src/app/app.config.ts": [
@@ -8694,6 +8847,18 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "(component: { name: string }, category?: Category): string => {\n    const storyName = component.name.replace('Component', '');\n    const categoryName = category ? category : Category.Others;\n    return `${categoryName}/${storyName}`;\n  }"
+                }
+            ],
+            "src/app/shared/utilities/color.ts": [
+                {
+                    "name": "generateRandomHex",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/utilities/color.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => {\n\n  const randomNumber = Math.random() * 16777215;\n  const randomHexNumber = Math.floor(randomNumber).toString(16);\n  const randomHex = `#${randomHexNumber}`;\n  return randomHex;\n}"
                 }
             ],
             "src/app/shared/utilities/sorting-map.ts": [
@@ -9928,16 +10093,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "actionsData",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "Add",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -9958,7 +10113,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "getModuleMetadata",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/finance/operation-category/opeartion-category.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "title",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -9969,7 +10144,37 @@
                 "linktype": "component",
                 "name": "OperationCategoryComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/finance/operation/opeartion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Add",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/finance/operation/opeartion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/finance/operation/opeartion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "title",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -10114,6 +10319,16 @@
                 "name": "TableComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/20",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/utilities/color.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "generateRandomHex",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
