@@ -2,7 +2,7 @@ import { Guid } from 'guid-typescript';
 
 // TODO: think how to implement model better
 export class RepeatingOperation {
-  repeatingOperationId: Guid;
+  operationId: Guid;
   name: string;
   value: number;
   repeatDay: number;
@@ -13,7 +13,7 @@ export class RepeatingOperation {
     value: number,
     repeatDay: number) {
 
-    this.repeatingOperationId = repeatingOperationId;
+    this.operationId = repeatingOperationId;
     this.repeatDay = repeatDay;
     this.name = name;
     this.value = value;

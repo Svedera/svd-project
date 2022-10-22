@@ -52,11 +52,15 @@ export class TimeoutConfiguration {
 export class ApiConfiguration {
   articleUrl: string;
   listUrl: string;
+  operationCategory: string;
 
   constructor(
     articleUrl: string,
-    listUrl: string) {
+    listUrl: string,
+    operationCategory: string) {
+
     this.articleUrl = articleUrl;
     this.listUrl = listUrl;
+    this.operationCategory = operationCategory;
   }
 }
