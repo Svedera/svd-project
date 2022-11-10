@@ -4,8 +4,10 @@ import { ValidationError } from '@backend-models/validationError';
 import { ControlState } from '@models/controlState';
 
 export const isValid = (control: AbstractControl) =>
-  (control != null) &&
-  (control.valid || control.dirty || control.errors == null);
+  control != null
+  && control.valid
+  && !control.dirty
+  && control.errors == null;
 
 export const mapValidatedResponseKey = (object: object, key: string) => {
   const keyLowered = key.toLowerCase();
