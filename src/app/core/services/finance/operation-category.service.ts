@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import {
+  AuditableOperationCategory,
   OperationCategory,
   OperationCategoryRequest
 } from '@backend-models/finance/operationCategory';
-
 import {
   ApiConfiguration,
   AppConfiguration,
@@ -21,7 +22,11 @@ import { RepositoryService } from '@services/repository.service';
   providedIn: 'root'
 })
 export class OperationCategoryService
-  extends RepositoryService<OperationCategory, OperationCategoryRequest>
+  extends RepositoryService
+  <AuditableOperationCategory,
+    OperationCategory,
+    OperationCategoryRequest>
+
   implements OperationCategoryHandler {
 
   apiPath: string = this.apiConfiguration.operationCategory;
@@ -37,5 +42,4 @@ export class OperationCategoryService
 
     super(httpClient, appConfig, runtime, timeoutConfig, logger);
   }
-
 }

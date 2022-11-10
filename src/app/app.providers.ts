@@ -19,10 +19,29 @@ import {
 import {
   OperationCategoryHandler
 } from '@services/abstract/operationCategoryHandler';
+import {
+  OperationCategoryServiceMock
+} from '@shared/mocks/services/operation-category.mock.service';
+
+export const debug = true;
 
 export const initConfig = (appConfig: ConfigurationService) => {
   return () => appConfig.loadConfig();
 }
+
+export const getOperationCategoryProvider = (): Provider => {
+  if (debug) {
+    return {
+      provide: OperationCategoryHandler,
+      useClass: OperationCategoryServiceMock
+    };
+  }
+
+  return {
+    provide: OperationCategoryHandler,
+    useClass: OperationCategoryService
+  };
+};
 
 export const AppProviders: Provider[] = [
   {
@@ -49,12 +68,12 @@ export const AppProviders: Provider[] = [
   {
     provide: ArticleHandler, useClass: ArticleService
   },
-  {
-    provide: OperationCategoryHandler,
-    useClass: OperationCategoryService
-  },
+
+  getOperationCategoryProvider(),
+
   {
     provide: Logging, useClass: LoggingService
   },
   LayoutService
 ];
+

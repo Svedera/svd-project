@@ -18,9 +18,9 @@ import { HttpBaseService } from '@services/http-base.service';
 @Injectable({
   providedIn: 'root'
 })
-export abstract class RepositoryService<T, R>
+export abstract class RepositoryService<T, P, R>
   extends HttpBaseService
-  implements RepositoryHandler < T, R > {
+  implements RepositoryHandler<T, P, R> {
   abstract readonly apiPath: string;
 
   constructor(
@@ -55,7 +55,7 @@ export abstract class RepositoryService<T, R>
     return this.httpPost(url, request);
   }
 
-  update(request: T):
+  update(request: P):
     Observable<ValidatedResponse<T>> {
 
     const base = this.runtime.apiBaseUrl;
@@ -74,5 +74,4 @@ export abstract class RepositoryService<T, R>
 
     return this.httpDelete(url);
   }
-
 }

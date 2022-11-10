@@ -2,12 +2,12 @@ import { Guid } from 'guid-typescript';
 
 import { AuditableEntity } from '@backend-models/auditableEntity';
 import { OperationType } from '@enums/finance/operationType';
-import { OperationCategory } from './operationCategory';
+import { AuditableOperationCategory } from './operationCategory';
 import { IdentifiableEntity } from '@models/identifiableEntity';
 
 export class OperationRequest {
   name: string;
-  category: OperationCategory;
+  category: AuditableOperationCategory;
   type: OperationType;
   value: number;
   date: Date;
@@ -16,7 +16,7 @@ export class OperationRequest {
 
   constructor(
     name: string,
-    category: OperationCategory,
+    category: AuditableOperationCategory,
     type: OperationType,
     value: number,
     date: Date,
@@ -38,7 +38,7 @@ export class Operation
 
   operationId: Guid;
   name: string;
-  category: OperationCategory;
+  category: AuditableOperationCategory;
   type: OperationType;
   value: number;
   date: Date;
@@ -51,7 +51,7 @@ export class Operation
 
     operationId: Guid,
     name: string,
-    category: OperationCategory,
+    category: AuditableOperationCategory,
     type: OperationType,
     value: number,
     date: Date,

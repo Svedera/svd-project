@@ -17,12 +17,44 @@ export class OperationCategoryRequest {
 }
 
 export class OperationCategory
-  extends AuditableEntity
-  implements OperationCategoryRequest, IdentifiableEntity {
+  extends OperationCategoryRequest
+  implements IdentifiableEntity {
 
   operationCategoryId: Guid;
-  name: string;
-  color: string;
+
+  constructor(
+    operationCategoryId: Guid,
+    name: string,
+    color: string) {
+
+    super(name, color);
+    this.operationCategoryId = operationCategoryId;
+  }
+
+  getUpdated(request: OperationCategoryRequest): OperationCategory {
+    const updated = {
+      ...this,
+      color: request.color,
+      name: request.name
+    }
+
+    return updated;
+  }
+
+  getId = (): Guid => this.operationCategoryId;
+}
+
+export class AuditableOperationCategory
+  extends OperationCategory
+  implements AuditableEntity, IdentifiableEntity {
+
+  readonly ownerId: Guid;
+  readonly owner: string;
+  readonly createdDate: Date;
+
+  readonly lastModifiedById: Guid | null = null;
+  readonly lastModifiedBy: string | null = null
+  readonly lastModifiedDate: Date | null = null
 
   constructor(
     ownerId: Guid,
@@ -37,29 +69,14 @@ export class OperationCategory
     lastModifiedBy: string | null = null,
     lastModifiedDate: Date | null = null) {
 
-    super(
-      ownerId,
-      owner,
-      createdDate,
-      lastModifiedById,
-      lastModifiedBy,
+    super(operationId, name, color);
 
-      lastModifiedDate);
+    this.ownerId = ownerId;
+    this.owner = owner;
+    this.createdDate = createdDate;
 
-    this.operationCategoryId = operationId;
-    this.name = name;
-    this.color = color;
+    this.lastModifiedById = lastModifiedById;
+    this.lastModifiedBy = lastModifiedBy;
+    this.lastModifiedDate = lastModifiedDate;
   }
-
-  getUpdated(request: OperationCategoryRequest): OperationCategory {
-    const updated = {
-      ...this,
-      color: request.color,
-      name: request.name
-    }
-
-    return updated;
-  }
-
-  getId = (): Guid => this.operationCategoryId;
 }

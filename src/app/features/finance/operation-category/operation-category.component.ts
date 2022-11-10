@@ -10,7 +10,7 @@ import {
 } from '@angular/forms';
 
 import {
-  OperationCategory, OperationCategoryRequest
+  AuditableOperationCategory, OperationCategoryRequest
 } from '@backend-models/finance/operationCategory';
 import { ValidatedResponse } from '@backend-models/validatedResponse';
 import { generateRandomHex } from '@shared/utilities/color';
@@ -29,7 +29,7 @@ import {
   styleUrls: ['./operation-category.component.css']
 })
 export class OperationCategoryComponent implements OnInit {
-  @Input() operationCategory: OperationCategory | null = null;
+  @Input() operationCategory: AuditableOperationCategory | null = null;
 
   color: string | null = null;
   form: FormGroup;
@@ -96,7 +96,7 @@ export class OperationCategoryComponent implements OnInit {
     responseObserver.subscribe(response => this.parseResponse(response));
   }
 
-  parseResponse(response: ValidatedResponse<OperationCategory>) {
+  parseResponse(response: ValidatedResponse<AuditableOperationCategory>) {
     if (response.validationResult.isValid) {
       return;
     }

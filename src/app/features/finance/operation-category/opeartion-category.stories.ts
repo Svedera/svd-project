@@ -1,7 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
+
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 
 import {
-  OperationCategory
+  AuditableOperationCategory
 } from '@backend-models/finance/operationCategory';
 import {
   Category,
@@ -11,6 +13,22 @@ import {
   OperationCategoryComponent
 } from './operation-category.component';
 import { SharedModule } from '@shared/shared.module';
+import {
+  OperationCategoryServiceMock
+} from '@shared/mocks/services/operation-category.mock.service';
+import {
+  OperationCategoryHandler
+} from '@services/abstract/operationCategoryHandler';
+import {
+  AppConfiguration,
+  RuntimeConfiguration,
+  TimeoutConfiguration
+} from '@models/appConfiguration';
+import { AppConfig, RuntimeConfig } from 'src/app/app.config';
+import { Logging } from '@services/abstract/logging';
+import { LoggingMock } from '@shared/mocks/services/logging.mock.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 const title = getGroupName(
   OperationCategoryComponent,
@@ -21,8 +39,31 @@ export const getModuleMetadata = () => moduleMetadata({
     OperationCategoryComponent
   ],
   imports: [
+    HttpClientModule,
+    BrowserAnimationsModule,
     SharedModule
   ],
+  providers: [
+    {
+      provide: Logging,
+      useClass: LoggingMock
+    },
+    {
+      provide: TimeoutConfiguration,
+      useValue: RuntimeConfig
+    },
+    {
+      provide: AppConfiguration,
+      useValue: AppConfig
+    },
+    {
+      provide: RuntimeConfiguration,
+      useValue: RuntimeConfig
+    },
+    {
+      provide: OperationCategoryHandler,
+      useClass: OperationCategoryServiceMock
+    }],
 })
 
 export default {
@@ -46,5 +87,5 @@ Edit.args = {
   operationCategory: {
     name: 'Food',
     color: '#FF5733'
-  } as OperationCategory,
+  } as AuditableOperationCategory,
 };
