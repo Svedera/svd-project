@@ -9,13 +9,17 @@ import {
 } from './operation-category/operation-category.component';
 import { AccountComponent } from './account/account.component';
 import { OperationComponent } from './operation/operation.component';
+import {
+  OperationCategoryListComponent
+} from './operation-category/list/operation-category-list.component';
 
 @NgModule({
   declarations: [
     FinanceDashboardComponent,
     OperationCategoryComponent,
     AccountComponent,
-    OperationComponent
+    OperationComponent,
+    OperationCategoryListComponent
   ],
   imports: [
     SharedModule

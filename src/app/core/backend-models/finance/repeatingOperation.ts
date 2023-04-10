@@ -18,5 +18,4 @@ export class RepeatingOperation {
     this.name = name;
     this.value = value;
   }
-
 }

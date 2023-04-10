@@ -20,10 +20,12 @@ import {
   FinanceModule
 } from './features/finance/finance.module';
 import { TestModule } from '@test/test/test.module';
+import { KeyResultComponent } from './features/okr/key-result/key-result.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    KeyResultComponent
   ],
   imports: [
     CommonModule,

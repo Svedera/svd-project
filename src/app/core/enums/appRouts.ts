@@ -3,5 +3,6 @@ export enum AppRouts {
   ArticleList = 'list',
   GameOfLife = 'game',
   Drawings = 'drawings',
-  Finance = 'finance'
+  Finance = 'finance',
+  KeyResults = 'key-results'
 }

@@ -38,7 +38,6 @@
     </a>
 
   </div>
-
   <div class="menu-item d-flex justify-content-center">
 
     <a routerlinkactive="active"
@@ -49,7 +48,6 @@
     </a>
 
   </div>
-
   <div class="menu-item d-flex justify-content-center">
 
     <a routerlinkactive="active"
@@ -57,6 +55,16 @@
        (click)="layout.closeMenu()">
       Finance
     <i class="{{ Icon.Finance}} md"></i>
+    </a>
+
+  </div>
+  <div class="menu-item d-flex justify-content-center">
+
+    <a routerlinkactive="active"
+       routerLink="/{{AppRouts.KeyResults}}"
+       (click)="layout.closeMenu()">
+      OKRs
+    <i class="{{ Icon.KeyResults}} md"></i>
     </a>
 
   </div>

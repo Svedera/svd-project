@@ -77,6 +77,13 @@ const routes: Routes = [{
   }
 },
 {
+  path: `${AppRouts.KeyResults}`,
+  component: FinanceDashboardComponent,
+  data: {
+    title: 'Finance'
+  }
+},
+{
   path: '',
   component: DefaultContentComponent,
   pathMatch: 'full',

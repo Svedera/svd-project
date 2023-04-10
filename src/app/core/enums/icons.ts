@@ -4,5 +4,6 @@ export enum Icon {
   ArticleTable = 'fa fa-fw fa-table',
   GameOfLife = 'fa fa-fw fa-chess-board',
   Drawings = 'fa fa-fw fa-pen-ruler',
-  Finance = 'fa-solid fa-landmark'
+  Finance = 'fa fa-fw fa-solid fa-landmark',
+  KeyResults = 'fa fa-fw fa-solid fa-check-double'
 }
