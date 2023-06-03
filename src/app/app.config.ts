@@ -7,6 +7,17 @@ import {
   TimeoutConfiguration
 } from '@models/appConfiguration';
 
+export interface Configuration {
+  /**
+   * Configuration values set in `index.html`
+   * Boolean values are represented as strings to avoid case sensitivity:
+   * `false`, `False`, `true`, `True` should all be accepted.
+   * This is done for avoiding issues with environment variables used in both
+   * Python (`True`, `False`) and JavaScript (`true`, `false`).
+   */
+  [k: string]: string | number;
+}
+
 export const RuntimeConfig: RuntimeConfiguration = {
   apiBaseUrl: '',
   logLevel: LogLevel.All

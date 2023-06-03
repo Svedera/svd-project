@@ -25,9 +25,9 @@ import {
 
 export const debug = true;
 
-export const initConfig = (appConfig: ConfigurationService) => {
-  return () => appConfig.loadConfig();
-}
+export const initConfig =
+  (appConfig: ConfigurationService): RuntimeConfiguration =>
+    appConfig.loadConfig();
 
 export const getOperationCategoryProvider = (): Provider => {
   if (debug) {

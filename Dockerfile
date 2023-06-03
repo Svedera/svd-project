@@ -19,13 +19,13 @@ COPY ./docker/lint-entrypoint.sh ./entrypoint.sh
 ENTRYPOINT ["sh", "entrypoint.sh"]
 
 ######### Create container for end-to-end tests
-FROM cypress/browsers:node14.17.0-chrome91-ff89 AS e2e-test
+FROM cypress/browsers:node16.14.0-chrome99-ff97 AS e2e-test
 WORKDIR /app
 COPY package.json .
 COPY package-lock.json .
 RUN npm ci cypress
 COPY cypress.json .
-COPY ./cypress ./cypress
+# COPY ./cypress ./cypress
 
 FROM e2e-test as e2e-test-web
 ENTRYPOINT ["/usr/local/bin/npm", "run", "test:e2e:ci:web"]

@@ -2,16 +2,23 @@
 
 # Exit when a command fails
 set -o errexit
+echo sveta
+echo"$BASE_URL"
+echo '${BASE_URL} \
+    ${API_URL} \
+    ${STORAGE_API_URL} \
+    ${AUTH_URL}'
 
 # Inject environment variables into NGINX configuration
 # List all variables to be substituted to avoid clashing with
 # NGINX own variables: https://serverfault.com/questions/577370
-API_URL=${API_URL:-'http://backend/backend'} \
+API_URL=${API_URL:-'http://backend:5000'} \
 STORAGE_API_URL=${STORAGE_API_URL:-'http://storage/storage'} \
 envsubst \
     '${BASE_URL} \
     ${API_URL} \
-    ${STORAGE_API_URL}' \
+    ${STORAGE_API_URL} \
+    ${AUTH_URL}' \
     < /etc/nginx/conf.d/default.conf.template \
     > /etc/nginx/conf.d/default.conf
 cat /etc/nginx/conf.d/default.conf
