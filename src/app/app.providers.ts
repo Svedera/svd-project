@@ -43,18 +43,26 @@ export const getOperationCategoryProvider = (): Provider => {
   };
 };
 
+export function appInitializerProvider(service: ConfigurationService) {
+  return () => initConfig(service);
+}
+
+const runtimeConfigInitializerProvider =
+  (service: ConfigurationService) =>
+    service.getConfig()
+
 export const AppProviders: Provider[] = [
   {
     provide: APP_INITIALIZER,
-    useFactory: initConfig,
+    useFactory: (service: ConfigurationService) =>
+      appInitializerProvider(service),
     deps: [ConfigurationService],
     multi: true,
   },
   {
     provide: RuntimeConfiguration,
     deps: [ConfigurationService],
-    useFactory: (service: ConfigurationService) =>
-      service.getConfig()
+    useFactory: runtimeConfigInitializerProvider
   },
   {
     provide: AppConfiguration, useValue: AppConfig
