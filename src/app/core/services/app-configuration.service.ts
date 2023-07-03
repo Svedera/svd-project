@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { RuntimeConfiguration } from '@models/appConfiguration';
 import { LogLevel } from '@enums/logLevel';
 import { Configuration, RuntimeConfig } from 'src/app/app.config';
-import { Logging } from './abstract/logging';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +14,6 @@ export class ConfigurationService {
   };
 
   loaded = false;
-
-  constructor(private http: HttpClient, private logger: Logging) { }
 
   loadConfig(): RuntimeConfiguration {
     const htmlConfiguration: Configuration =
@@ -42,7 +38,8 @@ export class ConfigurationService {
               accumulated[key as keyof Object] =
                 JSON.parse(String(src[key]));
             } catch (e) {
-              this.logger.error(`Could not parse value with key: ${key}`);
+              // eslint-disable-next-line no-console
+              console.error(`Could not parse value with key: ${key}`);
             }
           }
           return accumulated;
