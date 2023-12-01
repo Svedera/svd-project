@@ -45,7 +45,7 @@ export class DrawingService implements DrawingHandler {
   }
 
   resizeCanvas(size: Size) {
-    if (this.canvas == null) {
+    if (this.canvas == null || this.context) {
       throw new Error('Canvas is not initialized.');
     }
 

@@ -4,5 +4,6 @@ export enum AppRouts {
   GameOfLife = 'game',
   Drawings = 'drawings',
   Finance = 'finance',
-  KeyResults = 'key-results'
+  KeyResults = 'key-results',
+  Algorithms = 'algorithms'
 }

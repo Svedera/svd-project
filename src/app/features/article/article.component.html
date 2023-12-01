@@ -1,8 +1,11 @@
-<ng-container *ngIf="article == null else articleTemplate">
-  Could not load article.
-</ng-container>
+<div class="p-5">
+  <ng-container *ngIf="article == null else articleTemplate">
+    Could not load article.
+  </ng-container>
+</div>
 
 <ng-template #articleTemplate>
+
   <h1 class="text-center"
       tabindex="0"
       [attr.aria-label]="article!.title">

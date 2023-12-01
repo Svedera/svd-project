@@ -23,11 +23,14 @@ import { TestModule } from '@test/test/test.module';
 import {
   KeyResultComponent
 } from './features/okr/key-result/key-result.component';
+import {
+  AlgorithmsModule
+} from './features/algorithms/algorithms.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KeyResultComponent
+    KeyResultComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +45,7 @@ import {
     GameOfLiveModule,
     DrawingModule,
     FinanceModule,
+    AlgorithmsModule,
     TestModule
   ],
   providers: AppProviders,

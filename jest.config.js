@@ -27,7 +27,7 @@ module.exports =
     '^.+\\.(js|mjs|html)$': 'jest-preset-angular'
   },
   transformIgnorePatterns: [
-    `/node_modules/(?!${ esModules.join('|') })`,
+    `/node_modules/(?!${esModules.join('|')})`,
   ],
   moduleNameMapper: {
     tslib: 'tslib/tslib.es6.js',

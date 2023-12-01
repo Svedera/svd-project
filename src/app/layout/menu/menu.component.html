@@ -1,4 +1,5 @@
 <div class="col">
+
   <div class="d-flex justify-content-center">
 
     <img [routerLink]="['/']"
@@ -8,64 +9,47 @@
          src="/assets/images/logo.png">
 
   </div>
-  <div class="menu-item d-flex justify-content-center mt-4">
 
-    <a routerlinkactive="active"
-       routerLink="/{{AppRouts.Article}}"
-       (click)="layout.closeMenu()">
-      Article
-      <i class="{{ Icon.Article}} md"></i>
-    </a>
+  <svd-menu-item [appRoutes]="AppRouts.Article"
+                 [icon]="Icon.Article"
+                 title="Article"
+                 (itemClick)="layout.closeMenu()">
+  </svd-menu-item>
 
-  </div>
-  <div class="menu-item d-flex justify-content-center">
+  <svd-menu-item [appRoutes]="AppRouts.ArticleList"
+                 [icon]="Icon.ArticleTable"
+                 title="Table"
+                 (itemClick)="layout.closeMenu()">
+  </svd-menu-item>
 
-    <a routerlinkactive="active"
-       routerLink="/{{AppRouts.ArticleList}}"
-       (click)="layout.closeMenu()">
-      Table
-      <i class="{{ Icon.ArticleTable }} md"></i>
-    </a>
+  <svd-menu-item [appRoutes]="AppRouts.GameOfLife"
+                 [icon]="Icon.GameOfLife"
+                 title="Game of Life"
+                 (itemClick)="layout.closeMenu()">
+  </svd-menu-item>
 
-  </div>
-  <div class="menu-item d-flex justify-content-center">
+  <svd-menu-item [appRoutes]="AppRouts.Drawings"
+                 [icon]="Icon.Drawings"
+                 title="Drawings"
+                 (itemClick)="layout.closeMenu()">
+  </svd-menu-item>
 
-    <a routerlinkactive="active"
-       routerLink="/{{AppRouts.GameOfLife}}"
-       (click)="layout.closeMenu()">
-      Game of Life
-      <i class="{{ Icon.GameOfLife}} md"></i>
-    </a>
+  <svd-menu-item [appRoutes]="AppRouts.Finance"
+                 [icon]="Icon.Finance"
+                 title="Finance"
+                 (itemClick)="layout.closeMenu()">
+  </svd-menu-item>
 
-  </div>
-  <div class="menu-item d-flex justify-content-center">
+  <svd-menu-item [appRoutes]="AppRouts.KeyResults"
+                 [icon]="Icon.KeyResults"
+                 title="Key Results"
+                 (itemClick)="layout.closeMenu()">
+  </svd-menu-item>
 
-    <a routerlinkactive="active"
-       routerLink="/{{AppRouts.Drawings}}"
-       (click)="layout.closeMenu()">
-      Canvas
-      <i class="{{ Icon.Drawings}} md"></i>
-    </a>
+  <svd-menu-item [appRoutes]="AppRouts.Algorithms"
+                 [icon]="Icon.Algorithms"
+                 title="Algorithms"
+                 (itemClick)="layout.closeMenu()">
+  </svd-menu-item>
 
-  </div>
-  <div class="menu-item d-flex justify-content-center">
-
-    <a routerlinkactive="active"
-       routerLink="/{{AppRouts.Finance}}"
-       (click)="layout.closeMenu()">
-      Finance
-    <i class="{{ Icon.Finance}} md"></i>
-    </a>
-
-  </div>
-  <div class="menu-item d-flex justify-content-center">
-
-    <a routerlinkactive="active"
-       routerLink="/{{AppRouts.KeyResults}}"
-       (click)="layout.closeMenu()">
-      OKRs
-    <i class="{{ Icon.KeyResults}} md"></i>
-    </a>
-
-  </div>
 </div>

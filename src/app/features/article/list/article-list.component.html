@@ -1,10 +1,12 @@
-<h1 class="text-center">List</h1>
+<div class="p-5">
 
-<svd-table [recordsStream]="recordsStream"
-           [columnsStream]="columnsStream"
-           [pagingStream]="pagingStream"
-           [detailTemplate]="articleDetails"></svd-table>
+  <h1 class="text-center">List</h1>
+  <svd-table [recordsStream]="recordsStream"
+             [columnsStream]="columnsStream"
+             [pagingStream]="pagingStream"
+             [detailTemplate]="articleDetails"></svd-table>
 
+</div>
 
 <ng-template #articleDetails
              let-article="record">

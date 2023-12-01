@@ -7,13 +7,15 @@ import {
   DefaultContentComponent
 } from './default-content/default-content.component';
 import { LayoutComponent } from './layout/layout.component';
+import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
     MenuComponent,
     HeaderComponent,
     DefaultContentComponent,
-    LayoutComponent
+    LayoutComponent,
+    MenuItemComponent
   ],
   exports: [
     LayoutComponent
