@@ -1,0 +1,34 @@
+<div class="col">
+  <div class="row mb-3">
+
+    <label for="categoryName"
+           class="form-label">Category name:</label>
+    <div class="d-flex">
+      <form [formGroup]="form"
+            class="flex-fill me-2">
+
+        <input class="form-control"
+               id="categoryName"
+               aria-describedby="categoryName"
+               placeholder="Enter category name..."
+               formControlName="name"
+               [class.is-invalid]="formState.name.isInvalid"
+               [attr.title]="formState.name.error">
+      </form>
+      <ngx-colors ngx-colors-trigger
+                  [(ngModel)]="color"></ngx-colors>
+
+    </div>
+
+  </div>
+
+  <div class="row d-grid d-md-flex justify-content-md-end mx-auto">
+    <div class="col-md-3 col-lg-2">
+      <button svd-button
+              type="submit"
+              class="btn sharp uppercase w-100"
+              (click)="submit()">Save
+      </button>
+    </div>
+  </div>
+</div>

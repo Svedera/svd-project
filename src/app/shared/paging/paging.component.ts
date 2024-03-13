@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { PagingView } from '@models/pagingData';
+import { PagingView } from '@models/article/pagingData';
 
 @Component({
   selector: 'svd-paging',

@@ -28,28 +28,3 @@
 }
 
 
-.menu-item  {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-item a {
-  display: block;
-  padding: 0.7rem 1rem;
-  text-align: right;
-  margin: 0 -1.25rem;
-  text-decoration: none;
-  color: var(--svd-textColor);
-  font-size: 1.1875rem;
-  text-transform: uppercase;
-  transition: transform .25s;
-  transform-origin: right center;
-}
-
-.menu-item a:hover,
-.menu-item a.active {
-  color: var(--svd-linkHoverColor);
-  transform: scale(1.05);
-}
-

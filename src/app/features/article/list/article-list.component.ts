@@ -5,8 +5,8 @@ import { Observable, of } from 'rxjs';
 
 import { Article } from '@backend-models/article';
 import { ArticleList } from '@backend-models/articleList';
-import { Paging } from '@models/pagingData';
-import { ColumnData } from '@models/tableData';
+import { Paging } from '@models/article/pagingData';
+import { ColumnData } from '@models/article/tableData';
 import {
   sortObjectNumberField,
   sortObjectStringField

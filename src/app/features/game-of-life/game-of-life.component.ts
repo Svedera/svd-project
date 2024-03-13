@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 import { GameSettings } from '@models/game-of-life/gameSettings';
-import { GameOfLifeService } from '@services/game-of-life.service';
+import { GameOfLifeService } from '@services/game-of-life/game-of-life.service';
 import { GameSpeed } from '@enums/gameSpeed';
 import { GameState } from '@models/game-of-life/gameState';
 

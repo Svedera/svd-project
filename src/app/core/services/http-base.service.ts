@@ -36,4 +36,39 @@ export class HttpBaseService {
         catchError(this.handleError)
       );
   }
+
+  protected httpPost<T, R>(
+    url: string,
+    value: T,
+    params: HttpParams | undefined = undefined): Observable<R> {
+    return this.http
+      .post<R>(url, value, { params: params })
+      .pipe(
+        timeout(this.timeouts.requestTimeout),
+        catchError(this.handleError)
+      );
+  }
+
+  protected httpPut<T, R>(
+    url: string,
+    value: T,
+    params: HttpParams | undefined = undefined): Observable<R> {
+    return this.http
+      .get<R>(url, { params: params })
+      .pipe(
+        timeout(this.timeouts.requestTimeout),
+        catchError(this.handleError)
+      );
+  }
+
+  protected httpDelete<T>(
+    url: string,
+    params: HttpParams | undefined = undefined): Observable<T> {
+    return this.http
+      .delete<T>(url, { params: params })
+      .pipe(
+        timeout(this.timeouts.requestTimeout),
+        catchError(this.handleError)
+      );
+  }
 }

@@ -1,15 +1,18 @@
 {
   "html.format.wrapAttributes": "force-aligned",
   "cSpell.words": [
+    "compodoc",
     "Conways",
     "devkit",
     "eqeqeq",
     "fontawesome",
     "fortawesome",
     "ngneat",
+    "okrs",
     "postbuild",
     "routerlink",
     "routerlinkactive",
+    "Sharky",
     "Svedera",
     "Wiseman"
   ]

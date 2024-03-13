@@ -21,6 +21,15 @@ import {
 import {
   DrawingsComponent
 } from './features/drawings/drawings.component';
+import {
+  FinanceDashboardComponent
+} from './features/finance/finance-dashboard/finance-dashboard.component';
+import {
+  KeyResultComponent
+} from './features/okr/key-result/key-result.component';
+import {
+  AlgorithmsComponent
+} from './features/algorithms/algorithms.component';
 
 const routes: Routes = [{
   path: `${AppRouts.Article}/:id`,
@@ -67,6 +76,27 @@ const routes: Routes = [{
   }
 },
 {
+  path: `${AppRouts.Finance}`,
+  component: FinanceDashboardComponent,
+  data: {
+    title: 'Finance'
+  }
+},
+{
+  path: `${AppRouts.KeyResults}`,
+  component: KeyResultComponent,
+  data: {
+    title: 'Finance'
+  }
+},
+{
+  path: `${AppRouts.Algorithms}`,
+  component: AlgorithmsComponent,
+  data: {
+    title: 'Finance'
+  }
+},
+{
   path: '',
   component: DefaultContentComponent,
   pathMatch: 'full',
@@ -84,7 +114,7 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

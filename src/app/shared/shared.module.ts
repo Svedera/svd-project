@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxFontAwesomeModule } from 'ngx-font-awesome';
+import { NgxColorsModule } from 'ngx-colors';
 
 import { ImageComponent } from './image/image.component';
 import { ChipComponent } from './chip/chip.component';
@@ -36,11 +37,13 @@ import {
     ReactiveFormsModule,
     FormsModule,
 
+    NgxColorsModule,
     NgxFontAwesomeModule
   ],
   exports: [
     CommonModule,
 
+    NgxColorsModule,
     NgxFontAwesomeModule,
 
     ImageComponent,

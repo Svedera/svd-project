@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Guid } from 'guid-typescript';
 
-import { PagingBase, PagingView } from '@models/pagingData';
+import { PagingBase, PagingView } from '@models/article/pagingData';
 import {
   ColumnDataBase, ColumnView
-} from '@models/tableData';
+} from '@models/article/tableData';
 import { SortingOrder } from '@enums/sortingType';
 
 @UntilDestroy()

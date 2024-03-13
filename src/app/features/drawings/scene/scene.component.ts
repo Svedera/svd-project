@@ -10,7 +10,7 @@ import { fromEvent, mergeMap, takeUntil } from 'rxjs';
 import { SceneEvent, SceneInteractionMode } from '@enums/scene';
 import { DrawingHandler } from '@services/abstract/drawingHandler';
 import { Point } from '@models/drawings/elements';
-import { DrawingService } from '@services/drawing.service';
+import { DrawingService } from '@services/drawing/drawing.service';
 
 @Component({
   selector: 'svd-scene',

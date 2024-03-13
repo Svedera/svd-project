@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Hosted version
 
-[Link](https://svedera-test.herokuapp.com/) to hosted version.
+[Link](TODO) to hosted version.
 
 ## Development server
 
@@ -18,9 +18,51 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Run
+
+### CLI
+
+```npm start```
+
+### Docker
+
+```bash
+docker build \
+          --tag svd-final \
+          --target final \
+          .
+
+docker run \
+        --interactive \
+        --name svd-final-container \
+                svd-final
+
+```
+
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Jest](https://jestjs.io/).
+
+or
+
+Run run in the docker container
+
+```bash
+docker build \
+          --tag frontend-unit-test-image \
+          --target unit-test \
+          .
+
+docker run \
+        --interactive \
+        --name frontend-unit-test-container \
+                frontend-unit-test-image
+
+```
+
+### Single tes file run
+
+`npm test -- shared/utilities/utilities.spec.ts --verbose`
 
 ## Running end-to-end tests
 
