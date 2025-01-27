@@ -15,6 +15,7 @@ import { Icon } from '@enums/icons';
 export class MenuComponent implements OnInit {
   Icon = Icon;
   AppRouts = AppRouts;
+  backendDeployed = false;
 
   @Input() visibilityStream: Observable<boolean> | null = null;
 

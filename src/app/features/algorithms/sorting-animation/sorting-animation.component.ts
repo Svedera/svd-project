@@ -8,6 +8,7 @@ import { AlgorithmVisualizer } from '@services/abstract/algorithmVisualizer';
 import {
   AlgorithmVisualizationService
 } from '@services/drawing/algorithm-visualization.service';
+import { generateRandomArray } from '@shared/utilities/generators';
 
 @Component({
   selector: 'svd-sorting-animation',
@@ -49,5 +50,10 @@ export class SortingAnimationComponent implements OnInit {
     });
 
     this.visualizer.initializeCanvas(this.canvas);
+  }
+
+  test() {
+    const array = generateRandomArray(5);
+    this.visualizer.visualizeElementSwitch(array, 0, 1);
   }
 }

@@ -6,17 +6,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxFontAwesomeModule } from 'ngx-font-awesome';
 import { NgxColorsModule } from 'ngx-colors';
 
-import { ImageComponent } from './image/image.component';
-import { ChipComponent } from './chip/chip.component';
+import { ImageComponent } from './components/image/image.component';
+import { ChipComponent } from './components/chip/chip.component';
 import { UrlAsBackgroundImagePipe } from './pipes/url-as-background-image.pipe';
 import { RemoveEmptyEntriesPipe } from './pipes/remove-empty-entries.pipe';
-import { TableComponent } from './table/table.component';
+import { TableComponent } from './components/table/table.component';
 import { PagingComponent } from './paging/paging.component';
 import { GetPagePipe } from './pipes/get-page.pipe';
 import { FirstParagraphPipe } from './pipes/text-fragment.pipe';
 import {
   RemoteStateWrapperComponent
 } from './remote-state-wrapper/remote-state-wrapper.component';
+import {
+  AccordionMenuComponent
+} from './components/accordion/accordion-menu.component';
+import { NullOrEmptyArrayPipe } from './pipes/null-or-empty-array.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import {
     ImageComponent,
     ChipComponent,
     TableComponent,
-    PagingComponent
+    PagingComponent,
+    AccordionMenuComponent,
+    NullOrEmptyArrayPipe
   ],
   imports: [
     CommonModule,
@@ -49,6 +55,7 @@ import {
     ImageComponent,
     ChipComponent,
     TableComponent,
+    AccordionMenuComponent,
 
     RemoteStateWrapperComponent,
     UrlAsBackgroundImagePipe,

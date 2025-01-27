@@ -1,0 +1,28 @@
+.accordion-item {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button {
+  background-color: var(--svd-panelsColor);
+  color: #212529;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--svd-panelsColor);
+  color: #000;
+}
+
+.accordion-body {
+  background-color: var(--svd-secondaryColor);
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.list-group-item {
+  background-color: var(--svd-backgroundColor);
+}

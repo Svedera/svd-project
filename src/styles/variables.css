@@ -7,7 +7,8 @@
   --svd-maxWidth: 1000px;
   --svd-logoWidth: 7em;
 
-  --svd-backgroundColor: #E6F4F1;
+  --svd-backgroundColor:  #E6F4F1;
+  --svd-light-backgroundColor:#F8FCFB;
   --svd-panelsColor: #66A3BB;
 
   --svd-highlightColor: #466F81;

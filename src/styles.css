@@ -5,6 +5,7 @@
 @import 'styles/variables.css';
 @import 'styles/fonts.css';
 @import 'styles/button.css';
+@import 'styles/accordion.css';
 
 * {
   box-sizing: border-box;

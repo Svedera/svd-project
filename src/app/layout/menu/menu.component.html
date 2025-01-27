@@ -10,13 +10,15 @@
 
   </div>
 
-  <svd-menu-item [appRoutes]="AppRouts.Article"
+  <svd-menu-item *ngIf="backendDeployed" 
+                 [appRoutes]="AppRouts.Article"
                  [icon]="Icon.Article"
                  title="Article"
                  (itemClick)="layout.closeMenu()">
   </svd-menu-item>
 
-  <svd-menu-item [appRoutes]="AppRouts.ArticleList"
+  <svd-menu-item *ngIf="backendDeployed" 
+                 [appRoutes]="AppRouts.ArticleList"
                  [icon]="Icon.ArticleTable"
                  title="Table"
                  (itemClick)="layout.closeMenu()">

@@ -1,0 +1,46 @@
+<ng-container *ngIf="(items | nullOrEmptyArray) else emptyTemplate">
+    <span class="p-5 text-center">
+        No items provided.
+    </span>
+</ng-container>
+
+<ng-template #emptyTemplate>
+    <div class="accordion"
+         [id]="accordionId">
+
+        <div *ngFor="let accordionItem of items; let i = index"
+             class="accordion-item">
+
+            <h2 class="accordion-header"
+                id="headingOne">
+                <button class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne">
+                    {{accordionItem.title}}
+                </button>
+            </h2>
+            <div id="collapseOne"
+                 class="accordion-collapse collapse show"
+                 aria-labelledby="headingOne"
+                 data-bs-parent="#accordionExample">
+
+                <div class="accordion-body p-0">
+
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let item of accordionItem.options"
+                            class="list-group-item ps-5"
+                            [class.active]="item.active"
+                            aria-current="true">{{item.title}}</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</ng-template>

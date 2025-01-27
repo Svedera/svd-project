@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from '@shared/shared.module';
 import { AlgorithmsComponent } from './algorithms.component';
-import { SortingAnimationComponent } from './sorting-animation/sorting-animation.component';
+import {
+  SortingAnimationComponent
+} from './sorting-animation/sorting-animation.component';
 
 @NgModule({
   declarations: [

@@ -2,7 +2,6 @@ import { Size } from '@models/drawings/elements';
 import { CanvasNotInitializedError } from '@models/drawings/errors';
 import { LineSettings } from '@models/drawings/settings';
 import { AlgorithmVisualizer } from '@services/abstract/algorithmVisualizer';
-import { sleep } from '@shared/utilities/utilities';
 
 export class AlgorithmVisualizationService implements AlgorithmVisualizer {
 
@@ -24,11 +23,19 @@ export class AlgorithmVisualizationService implements AlgorithmVisualizer {
   private currentX = Infinity;
   private currentY = Infinity;
   private colorHue = 0;
+
+  // SVETA TODO: move to settings
   private backgroundColor = 'white';
   private contextSelector = '2d';
 
   private circleRadius = 20;
   private spacing = 70; // distance between the centers of two adjacent circles
+
+  private animationFrameNumber = 20;
+
+  private get elementCenterDistance(): number {
+    return this.circleRadius + this.spacing;
+  }
 
   initializeCanvas(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
@@ -55,46 +62,17 @@ export class AlgorithmVisualizationService implements AlgorithmVisualizer {
 
     this.context!.clearRect(0, 0, this.canvas!.width, this.canvas!.height);
     for (let i = 0; i < currentArray.length; i++) {
-      const xPos = currentArray[i];
-      const yPos = this.canvas!.height / 2; // middle of the canvas
 
-      this.context!.beginPath();
-      this.context!.arc(xPos, yPos, this.circleRadius, 0, Math.PI * 2);
-      this.context!.fill();
-
-      // Drawing the number inside the circle
-      this.context!.fillStyle = 'white';
-      this.context!.textAlign = 'center';
-      this.context!.textBaseline = 'middle';
-      this.context!.font = '16px Arial';
-      this.context!.fillText(currentArray[i].toString(), xPos, yPos);
-      this.context!.fillStyle = 'black'; // Reset fill color for the next circle
     }
   }
 
-  async visualizerIteration(current_array: number[],
+  drawElement
+
+  async visualizeElementSwitch(
+    current_array: number[],
     first_element_index: number,
     second_element_index: number) {
-    const steps = 20; // number of steps for the animation
-    const duration = 25; // duration for each step in milliseconds
-    const element_width = this.circleRadius * 2 + this.spacing
-    const aStartX = element_width * first_element_index + this.circleRadius;
-    const bStartX = element_width * second_element_index + this.circleRadius;
 
-    const aEndX = bStartX;
-    const bEndX = aStartX;
-
-    for (let i = 0; i <= steps; i++) {
-      const t = i / steps; // normalization factor
-      current_array[first_element_index] = (1 - t) * aStartX + t * aEndX;
-      current_array[second_element_index] = (1 - t) * bStartX + t * bEndX;
-
-      await this.drawArray(current_array);
-      await sleep(duration);
-    }
-
-    [current_array[first_element_index], current_array[second_element_index]] =
-      [current_array[second_element_index], current_array[first_element_index]];
   }
 
   resizeCanvas(size: Size) {
